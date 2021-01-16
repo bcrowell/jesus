@@ -1,0 +1,13 @@
+*.pdf
+
+*.aux
+*.log
+*.idx
+*.toc
+*.ilg
+*.bak
+
+*~
+*/.xvpics/*
+a.a
+
