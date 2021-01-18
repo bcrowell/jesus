@@ -1,4 +1,4 @@
-\documentclass[8pt,twocolumn]{article}
+\documentclass[11pt,twocolumn]{article}
 \usepackage{fontspec}
 \setmainfont{DejaVu Serif} % This font looks like ass. But it makes greek work.
 % Haven't set up Hebrew/Aramaic -- https://tex.stackexchange.com/q/354676/6853
@@ -7,12 +7,12 @@
 
 \usepackage{navigator}
 \usepackage{graphicx}
-\usepackage{color}% ---- see pdftex mailing list, 2004 May 22-23
+\usepackage{xcolor}
 
-\newcommand{\quotesize}{\large{}}
+\newcommand{\quotesize}{\normalsize{}}
 \newcommand{\maintextquotesize}{\renewcommand{\quotesize}{\large{}}}
 \newcommand{\notequotesize}{\renewcommand{\quotesize}{\normalsize{}}}
-
+\newcommand{\comm}[1]{\begingroup \color{black!50} #1\endgroup}
 \newenvironment{quotetext}{\begingroup\quotesize}{\endgroup}
 \newcommand{\bible}[2]{\begin{quotetext}\textbf{#1} #2\end{quotetext}}
 \newcommand{\matthew}[2]{\bible{Matthew #1}{#2}}
@@ -82,10 +82,12 @@ John came from a priestly family:
 
 \luke{1:5}{There was in the days of Herod, the king of Judea, a certain priest named Zacharias [John's father], of the priestly division of Abijah.}
 
+\comm{
 John was a great celebrity of his time and place, meriting a long passage in
 Josephus (much longer than the brief mention of Jesus\footnote{Antiquities of the Jews 20-9;
 excluding the likely forgery in 18-3}).
 Josephus says:\footnote{18-5-2} % https://www.gutenberg.org/files/2848/2848-h/2848-h.htm#link182HCH0005
+}
 
 \begin{quotetext}
 Now some of the Jews thought that the destruction of Herod [Antipater]'s army [ca.~36 CE, by the Nabateans] came
@@ -100,31 +102,39 @@ body; supposing still that the soul was thoroughly purified beforehand
 by righteousness.
 \end{quotetext}
 
+\comm{
 Josephus's description of the significance of the baptism ritual is probably
 distorted and sanitized in order to compromise between John's popularity and Joseph's sympathies
 with the Roman-Jewish regime. Mark gives a different description: --
+}
 
 \gospelmark{1:4}{John came baptizing in the wilderness and preaching the
 baptism of repentance for forgiveness of sins.  All the country of
 Judea and all those of Jerusalem went out to him. They were baptized
 by him in the Jordan river, confessing their sins.}
 
+\comm{
 John's actions and the symbolism of the Jordan were extremely politically provocative to the Judean client regime \note{john-provocative}.
 Mark describes John as an ascetic.\note{john-ascetic}
+}
 
 \gospelmark{1:6}{John was clothed with camel’s hair and a leather belt around his waist. He ate locusts
 and wild honey.}
 
 
+\comm{
 Matthew, unlike Mark, has John prefiguring Jesus's mission by saying
 in addition,
+}
 
 \matthew{3:2}{``Repent, for the Kingdom of Heaven is at hand!''}
 
+\comm{
 and hurling abuse directly in the face of the priestly class as a ``brood of vipers'' (3:7). We don't
 know whether John's message was actually apocalyptic or so explicitly antiestablishment.
 
 Luke recounts further social teachings of John (possibly inauthentic \note{john-social}):
+}
 
 \luke{3:10}{The multitudes asked him, ``What then must we do?''
  He answered them, ``He who has two coats, let him give to him who has none. He who has food, let him do likewise.''
@@ -133,8 +143,9 @@ Luke recounts further social teachings of John (possibly inauthentic \note{john-
  Soldiers also asked him, saying, ``What about us? What must we do?''
 He said to them, ``Extort from no one by violence, neither accuse anyone wrongfully. Be content with your wages.''}
 
-
+\comm{
 Josephus continues with the story of John's doom:
+}
 
 \begin{quotetext}
 Now when [many] others came in crowds about him, for
@@ -151,63 +162,76 @@ opinion that the destruction of this army was sent as a punishment
 upon Herod, and a mark of God's displeasure to him.
 \end{quotetext}
 
+\comm{
 John was believed by some to have been the messiah, and he retained a body of followers for
 generations after his death.
-
+}
 
 
 \end{section}
 
 \begin{section}{Jesus's origins and early life}
 
+\comm{
 Mark, John, and Paul ignore the question of Jesus's birth.\footnote{Luke and Matthew provide stories of a miraculous birth,
 along with a ``massacre of the innocents'' (Matthew 2:16).} Embedded in the miraculous birth stories is the statement
 that he is an oldest son, born (ca.~4 BCE) in
 very humble circumstances.
+}
 
 \luke{2:7}{[Mary] gave birth to her firstborn son. She wrapped him in bands of cloth and laid him in a manger\ldots}
 
+\comm{
 The skeptical Nazareans later scornfully recount the background of this uppity local boy (\note{family-interp}):
+}
 
 \gospelmark{6:2}{``What is the wisdom that is given to this man, that such
 mighty works come about by his hands? Isn’t this the manual laborer, the
 son of Mary and brother of James, Joses, Judah, and Simon? Aren’t his
 sisters here with us?'' So they were offended at him.}
 
+\comm{
 Josephus (20-9-1) confirms that Jesus has a brother James, who was later to become the movement's main leader
 in Jerusalem \note{james}:
+}
 
 \begin{quotetext} % https://www.gutenberg.org/files/2848/2848-h/2848-h.htm#link202HCH0009
 \ldots [the procurator Albinus] assembled the sanhedrim of judges, and brought before them the brother of Jesus, who was called Christ, whose name was James, and some others \ldots [and] delivered them to be stoned
 \end{quotetext}
 
+\comm{
 Jesus grew up in the tiny village of Nazareth, in Galilee.\note{jesus-galilee}
 We don't know whether he learned to read, but he must have had an opportunity
 at least to hear the Hebrew Bible and learn it thoroughly \note{literacy}.
 
  At periodic festivals,
 Jews who were able to afford to travel gathered in great crowds at the temple in
-Jerusalem.
+Jerusalem:
+}
 
 \luke{2:41}{His parents went every year to Jeru\-salem at the feast of the Passover.  When he was twelve years old, they went up to Jerusalem according to the custom of the feast;  and when they had fulfilled the days, as they were returning, the boy Jesus stayed behind in Jerusalem. Joseph and his mother didn’t know it,  but supposing him to be in the company, they went a day’s journey; and they looked for him among their relatives and acquaintances.  When they didn’t find him, they returned to Jerusalem, looking for him.  After three days they found him in the temple, sitting in the middle of the teachers, both listening to them and asking them questions.  All who heard him were amazed at his understanding and his answers.  When they saw him, they were astonished; and his mother said to him, ``Son, why have you treated us this way? Behold, your father and I were anxiously looking for you.''
  He said to them, ``Why were you looking for me? Didn’t you know that I must be in my Father’s house?''}
 
+\comm{
 This miracle story may preserve a factual picture of a precocious child getting an education against all odds, or
 it may be that Jesus gained his education as a teenager or an adult, like Frederick Douglass. The gospels leap
 over Jesus's youth and young adulthood to ca.~28 CE, when Jesus would have been about 31.
+}
 
 \luke{3:1}{Now in the fifteenth year of the reign [14-37 CE] of Tiberius
 Caesar\ldots the word of God came to John, the son of Zacharias, in
 the wilderness.  He came into all the region around the Jordan,
 preaching the baptism of repentance for remission of sins.}
 
+\comm{
 Among John's followers were a number of people who were later to become the early Christians.
 One of the few things we can know securely about the historical Jesus is that he was baptized
 by John:
+}
 
 \gospelmark{1:9}{In those days, Jesus came from Nazareth of Galilee, and was baptized by John in the Jordan.}
 
-Others include Simon Peter, apostle and founder of the Church, and his brother:
+\comm{Others include Simon Peter, apostle and founder of the Church, and his brother:}
 
 \john{1:40}{One of the two [disciples] who heard John [describing 
 Jesus as the messiah] and followed him was Andrew, Simon Peter’s
@@ -217,7 +241,7 @@ brought him to Jesus. Jesus looked at him and said, “You are Simon the
 son of Jonah. You shall be called Cephas” (which is by interpretation,
 Peter).}
 
-Others are described in Acts:
+\comm{Others are described in Acts:}
 
 \bible{Acts 19:1}{While Apollos [an Alexandrian Jew who was a follower of John and then converted in Acts 18] was at Corinth, Paul, having passed through the upper country, came to Ephesus and found certain disciples. He said to them, “Did you receive the Holy Spirit when you believed?”
 They said to him, ``No, we haven’t even heard that there is a Holy Spirit.''
@@ -226,10 +250,10 @@ They said, ``Into John’s baptism.''
  Paul said, ``John indeed baptized with the baptism of repentance, saying to the people that they should believe in the one who would come after him, that is, in Christ Jesus.''
  When they heard this, they were baptized in the name of the Lord Jesus.}
 
-John is an ascetic;
-Jesus ends up rejecting John's asceticism, but adopts his antimaterialist slant.
+\comm{
 John carves out his own rogue franchise, competing with the temple in Jerusalem by
 offering free purification rituals, with a message that is threatening to both Rome and the priesthood.
+}
 
 \luke{3:18}{Then with many other exhortations [John] preached good news to the people, but Herod the tetrarch, being reproved by him for Herodias, his brother’s wife, and for all the evil things which Herod had done, added this also to them all, that he shut up John in prison.}
 
@@ -270,11 +294,13 @@ is absent from Mark.}}}
   astonished at his teaching, for he taught them as having authority,
   and not as the scribes \note{jesus-writing}.}
 
+\comm{
 Jesus gathers followers and creates his
 own illicit knock-off of John's illicit knock-off of the Temple's rites.
 Where John baptized people and then sent them home, Jesus gathers followers and 
 carries out an itinerant lifestyle ministry. John the Baptist never deputizes anyone to baptize on his behalf,
 but Jesus later does.
+}
 
 \gospelmark{1:23}{Immediately there was in their synagogue [in Capernaum] a man with an unclean spirit, and he cried out,   saying, ``Ha! What do we have to do with you, Jesus, you Nazarene? Have you come to destroy us? I know you who you are: the Holy One of God!''
   Jesus rebuked him, saying, ``Be quiet, and come out of him!''
@@ -289,20 +315,24 @@ but Jesus later does.
 \gospelmark{1:35}{Early in the morning, while it was still dark, he rose up and went out, and departed into a deserted place, and prayed there.   Simon and those who were with him searched for him.   They found him and told him, ``Everyone is looking for you.''
   He said to them, ``Let's go elsewhere into the next towns, that I may preach there also, because I came out for this reason.''   He went into their synagogues throughout all Galilee, preaching and casting out demons.}
 
+\comm{
 It would have been more culturally expected for a healer to set up shop in one place. Jesus doesn't do so, nor does
 he accept money. \personal{The reason for the secrecy and hiding is unclear. Following John's execution, Jesus may be
 effectively on the run from the law, or at least afraid of attracting attention from the authorities. He may be unwelcome
 in Capernaum as a follower of the subversive John, and afraid of being run out of town as he was in Nazareth. Or the secrecy
 may be Mark's literary prefiguring of the motif of the messianic secret.}
+}
 
 \gospelmark{1:40}{A leper came to him, begging him, kneeling down to him, and saying to him, ``If you want to, you can make me clean.''
   Being moved with compassion, he stretched out his hand, and touched him, and said to him, ``I want to. Be made clean.''   When he had said this, immediately the leprosy departed from him and he was made clean.   He strictly warned him and immediately sent him out,   and said to him, ``See that you say nothing to anybody, but go show yourself to the priest and offer for your cleansing the things which Moses commanded, for a testimony to them.''
   But he went out, and began to proclaim it much, and to spread about the matter, so that Jesus could no more openly enter into a city, but was outside in desert places. People came to him from everywhere. }
 
+\comm{
 The leper is ritually unclean according to the book of Leviticus, and the Temple has a prescribed
 and expensive ritual for cleaning him. Jesus's command to go to the Temple is therefore ironic
 or an intended slap in the face to the authorities. Some sources of Mark 1:41 have Jesus first being
 moved to anger rather than compassion, which makes sense in terms of this context.
+}
 
 \gospelmark{2:1}{When he entered again into Capernaum after some days, it was heard that he was at home.   Immediately many were gathered together, so that there was no more room, not even around the door; and he spoke the word to them.   Four people came, carrying a paralytic to him.   When they could not come near to him for the crowd, they removed the roof where he was. When they had broken it up, they let down the mat that the paralytic was lying on.   Jesus, seeing their faith, said to the paralytic, ``Son, your sins are forgiven you.''
 
@@ -327,6 +357,11 @@ He arose, and immediately took up the mat and went out in front of them all, so 
   He said to them, ``Did you never read what David did when he had need and was hungry--he, and those who were with him?    How he entered into God's house at the time of Abiathar the high priest, and ate the show bread, which is not lawful to eat except for the priests, and gave also to those who were with him?''
 
   He said to them, ``The Sabbath was made for man, not man for the Sabbath.    Therefore the Son of Man is lord even of the Sabbath.'' 
+}
+
+\comm{
+John was an ascetic;
+Jesus rejects John's asceticism, but retains an antimaterialist slant.
 }
 
 \end{section}
