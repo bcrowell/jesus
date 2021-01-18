@@ -1,13 +1,19 @@
-\documentclass[8pt]{article}
+\documentclass[8pt,twocolumn]{article}
 \usepackage{fontspec}
 \setmainfont{DejaVu Serif}
-
 % Haven't set up Hebrew/Aramaic -- https://tex.stackexchange.com/q/354676/6853
 
 \usepackage{parskip} % https://tex.stackexchange.com/a/57/6853
 
+\usepackage{navigator}
+\usepackage{graphicx}
+\usepackage{color}% ---- see pdftex mailing list, 2004 May 22-23
+
 \newcommand{\quotesize}{\large{}}
-\newenvironment{quotetext}{\begin{quote}\quotesize}{\end{quote}}
+\newcommand{\maintextquotesize}{\renewcommand{\quotesize}{\large{}}}
+\newcommand{\notequotesize}{\renewcommand{\quotesize}{\normalsize{}}}
+
+\newenvironment{quotetext}{\begingroup\quotesize}{\endgroup}
 \newcommand{\bible}[2]{\begin{quotetext}\textbf{#1} #2\end{quotetext}}
 \newcommand{\matthew}[2]{\bible{Matthew #1}{#2}}
 \newcommand{\gospelmark}[2]{\bible{Mark #1}{#2}}
@@ -16,23 +22,46 @@
 
 \newcommand{\personal}[1]{\emph{Personal opinion:\/ #1}}
 
+%----------------------------------------------------------------------------------
+% End notes.
+%
+% This could conceivably conflict with a \danger macro defined in the stix fonts.
+% https://tex.stackexchange.com/a/262549/6853
+% https://tex.stackexchange.com/a/18160/6853}
+% The anchor and jumplink macros are from the navigator package, https://tex.stackexchange.com/a/200073/6853 .
+\DeclareFontFamily{U}{stixbbit}{}
+\DeclareFontShape{U}{stixbbit}{m}{it}{<-> stix-mathbbit}{}
+\DeclareRobustCommand{\stixdangerousbend}{%
+  {\usefont{U}{stixbbit}{m}{it}\symbol{"F6}}%
+}
+\newcommand{\dangerousbend}{\rotatebox[origin=c]{-10}{\stixdangerousbend}}
+\newcommand{\link}[2]{\protect\jumplink{anchor-#1}{\textcolor{blue}{#2}}} % navigator package
+\newcommand{\note}[1]{\link{note-#1}{\dangerousbend\pageref{note:#1}}\label{notebackref:#1}\anchor{anchor-noteback-#1}}
+\newcommand{\notetext}[2]{\textbf{\link{noteback-#1}{\dangerousbend\pageref{notebackref:#1}}\label{note:#1}\anchor{anchor-note-#1}\quad{}#2}\par}
+% ... first arg is label, second is title
+\newcommand{\notewithoutbackref}[1]{\link{note-#1}{\dangerousbend\pageref{note:#1}}}
+% ... use this to refer to a note elsewhere than in the spot where the note's main reference is
+\newcommand{\notesummary}[1]{\emph{#1}\par}
+\newenvironment{notesection}[1]{
+  % #1 is title, such as Notes
+  % modeled on activity environment in lmcommon.sty, invoked by begin_notes() in eruby_util.rb
+  \setcounter{secnumdepth}{0}          % Don't number this section.
+  \section{#1}
+  \setcounter{secnumdepth}{2}          % Start numbering sections again.
+                                       % The \setcounter{secnumdepth} stuff is the way the author of titlesec suggests doing
+                                       % this. Using section* messes up footers & toc. 
+  \notequotesize
+}%
+{
+  \maintextquotesize
+}
+%----------------------------------------------------------------------------------
+
 \begin{document}
 
 The purpose of this document is to construct, for my own study, a life of Jesus with a single narrative
-thread, comprised mainly of a backbone of text from contemporary sources such as the gospels and Josephus.
-I've added my own notes on points that I was originally unable to understand by reading the gospels,
-including some information about the political, social, and historical context. I've attempted to
-omit all material that, in my amateur opinion, seems to be a later overlay that would not have
-been recognizable to Jesus or his contemporaries. An interesting and well known amateur project along
-the same lines is the Thomas Jefferson Bible. Unlike Jefferson, I haven't used scientific plausibility
-as a criterion to exclude what otherwise seem to have been real, contemporary psychological experiences.
-My criteria are arbitrary and personal, and they have the unfortunate side-effect of cutting out many
-wonderful and culturally familiar sayings and events, such as ``Man shall not live by bread alone.''
-
-Unless otherwise noted, all English translations of the Gospels and Acts are from the World English Bible.
-I've changed a few phrases to more direct, memorable, or familiar ones, such as ``brood of vipers,''
-or ``arrested'' rather than ``taken into custody.''
-Translations of Josephus are from Whiston, 1737.
+thread, comprised mainly of a backbone of text from contemporary sources such as the gospels and 
+Josephus \note{about-this-doc}.
 
 Political timeline:
 
@@ -46,7 +75,7 @@ ca. 4 BCE-39 CE --- Judea is ruled by tetrarchs and an ethnarch, including Herod
 
 66-73 --- First Jewish–Roman War. The temple in Jerusalem is destroyed. Gospel of Mark written around this time.
 
-\begin{section}{John the Baptist (d.~ca.~30 CE)}
+\begin{section}{John the Baptist}
 The Gospel of Mark is likely the first written record of Jesus, and it begins not with a description of Jesus but of John the Baptist.
 We know nothing reliable about John's birthplace or date of birth. Luke, in the course of a miraculous birth story, claims that
 John came from a priestly family:
@@ -80,26 +109,12 @@ baptism of repentance for forgiveness of sins.  All the country of
 Judea and all those of Jerusalem went out to him. They were baptized
 by him in the Jordan river, confessing their sins.}
 
-The client regime claimed a monopoly on purification rituals,
-which included both ablutions by the priests and lucrative blood sacrifices.
-John was not only challenging this monopoly but also (as Josephus carefully omits), by doing them in the
-Jordan, evoking a politically supercharged echo of the return of the Jews to the promised land:
-
-\bible{Numbers 27:12}{Yahweh said to Moses, ``Go up into this mountain of Abarim, and see the land which I have given to the children of Israel.''}
-
-There follows in Numbers 27-29 an extremely lengthy list of commands about animal sacrifices to be made to God
-once the people have been returned to the promised land. In Deuteronomy 34, God gives Moses another view of the
-promised land, reiterating that it is for the offspring of Abraham --- i.e., in the ears of John's followers, not
-to the Romans.
-Moses's successor Joshua then miraculously crosses the Jordan (Joshua 6) and conquers Canaan.
-
-Mark describes John as an ascetic.
+John's actions and the symbolism of the Jordan were extremely politically provocative to the Judean client regime \note{john-provocative}.
+Mark describes John as an ascetic.\note{john-ascetic}
 
 \gospelmark{1:6}{John was clothed with camel’s hair and a leather belt around his waist. He ate locusts
 and wild honey.}
 
-A strain of asceticism was one of many currents of thought that were in the air among the many
-contending schools of Judaism that included the Essene sect. It has been suggested that John was an Essene, but we don't know.
 
 Matthew, unlike Mark, has John prefiguring Jesus's mission by saying
 in addition,
@@ -109,7 +124,7 @@ in addition,
 and hurling abuse directly in the face of the priestly class as a ``brood of vipers'' (3:7). We don't
 know whether John's message was actually apocalyptic or so explicitly antiestablishment.
 
-Luke recounts further social teachings of John:
+Luke recounts further social teachings of John (possibly inauthentic \note{john-social}):
 
 \luke{3:10}{The multitudes asked him, ``What then must we do?''
  He answered them, ``He who has two coats, let him give to him who has none. He who has food, let him do likewise.''
@@ -118,9 +133,6 @@ Luke recounts further social teachings of John:
  Soldiers also asked him, saying, ``What about us? What must we do?''
 He said to them, ``Extort from no one by violence, neither accuse anyone wrongfully. Be content with your wages.''}
 
-\personal{This seems unlikely to be authentic. John preached to Jews in the wilderness along the Jordan river. What were
-tax collectors and Roman soldiers doing there, among that group? Unlike Jesus, John did not, as suggested here,
-gather people around him to live his teachings by sharing the necessities of daily life.}
 
 Josephus continues with the story of John's doom:
 
@@ -134,7 +146,7 @@ putting him to death, to prevent any mischief he might cause, and not
 bring himself into difficulties, by sparing a man who might make him
 repent of it when it would be too late. Accordingly he was sent a
 prisoner, out of Herod's suspicious temper, to Macherus, the castle I
-before mentioned, and was there put to death. Now the Jews had an
+before mentioned, and was there put to death [around 30 CE]. Now the Jews had an
 opinion that the destruction of this army was sent as a punishment
 upon Herod, and a mark of God's displeasure to him.
 \end{quotetext}
@@ -150,46 +162,30 @@ generations after his death.
 
 Mark, John, and Paul ignore the question of Jesus's birth.\footnote{Luke and Matthew provide stories of a miraculous birth,
 along with a ``massacre of the innocents'' (Matthew 2:16).} Embedded in the miraculous birth stories is the statement
-that he is the oldest child of poor manual laborers, born ca.~4 BCE in
+that he is an oldest son, born (ca.~4 BCE) in
 very humble circumstances.
 
 \luke{2:7}{[Mary] gave birth to her firstborn son. She wrapped him in bands of cloth and laid him in a manger\ldots}
 
-The skeptical Nazareans later recount the background of this uppity local boy:
+The skeptical Nazareans later scornfully recount the background of this uppity local boy (\note{family-interp}):
 
 \gospelmark{6:2}{``What is the wisdom that is given to this man, that such
 mighty works come about by his hands? Isn’t this the manual laborer, the
 son of Mary and brother of James, Joses, Judah, and Simon? Aren’t his
 sisters here with us?'' So they were offended at him.}
 
-They are insulting Jesus by referring to him as Mary's son. As the eldest brother, he should be referred to as Joseph's son.
-The implication is that he is illegitimate.\footnote{Aslan, p.~37}  See also Matthew 13:55-56 and Acts 1:14. 
-The word τέκτονος, usually translated as ``carpenter,'' can also just mean a landless manual laborer\footnote{Crossan}
-or be Roman slang for an ignorant peasant.\footnote{Aslan, p. 34} 
-
-Josephus (20-9-1) confirms that Jesus has a brother James, who was later to become a Christian leader:
+Josephus (20-9-1) confirms that Jesus has a brother James, who was later to become the movement's main leader
+in Jerusalem \note{james}:
 
 \begin{quotetext} % https://www.gutenberg.org/files/2848/2848-h/2848-h.htm#link202HCH0009
 \ldots [the procurator Albinus] assembled the sanhedrim of judges, and brought before them the brother of Jesus, who was called Christ, whose name was James, and some others \ldots [and] delivered them to be stoned
 \end{quotetext}
 
-Jesus grew up in the tiny village of Nazareth and was later often referred
-to as ``the Nazarean.'' As a Galilean, he would have spoken Aramaic
-with a distinctive accent.  The Galileans had a reputation as
-flinty hill people who didn't pay their taxes and were
-anticlerical and resentful of Judea and the Temple.  Galilee produced
-many bandits (Greek singular λῃστής), who in some cases may have had
-political or Robin Hood overtones.
+Jesus grew up in the tiny village of Nazareth, in Galilee.\note{jesus-galilee}
+We don't know whether he learned to read, but he must have had an opportunity
+at least to hear the Hebrew Bible and learn it thoroughly \note{literacy}.
 
-Any opportunities for Jesus to learn to read or write would have been
-extremely scarce, hence the disbelief expressed in Mark 6:2. Most
-experts believe that Jesus was unable to read or write, although it is
-possible that he could read but not write.
-
-Jesus later shows a deep knowledge of the Hebrew Bible and is able to debate its
-fine points skillfully. He would have had to gain this knowledge by listening in
-a synagogue, possibly in Nazareth, if the tiny town had one.\footnote{Aslan, p.~35, claims that no such synagogue existed. The
-synagogue at Capernaum, which the gospels record Jesus as visiting as an adult, was 40 km away.} At periodic festivals,
+ At periodic festivals,
 Jews who were able to afford to travel gathered in great crowds at the temple in
 Jerusalem.
 
@@ -272,14 +268,7 @@ is absent from Mark.}}}
   went after him.  They went into Capernaum, and immediately on the
   Sabbath day he entered into the synagogue and taught.  They were
   astonished at his teaching, for he taught them as having authority,
-  and not as the scribes.\footnote{ If Jesus could write, it was
-probably at the level of ``craftsman's literacy,'' such as the ability
-to record business records. Writing at the highest level of literacy
-was more like a specialized profession, that of a scribe. Because
-scribes were often officials in the hated Roman regime, analogous to lawyers and bureaucrats, most
-references to them in the NT are negative. A scribe can also indicate one
-who is literate and religiously learned, and this class of people was also
-suspect because they were part of a leisure class associated with the exploitative practices of the Temple.}}
+  and not as the scribes \note{jesus-writing}.}
 
 Jesus gathers followers and creates his
 own illicit knock-off of John's illicit knock-off of the Temple's rites.
@@ -316,5 +305,104 @@ or an intended slap in the face to the authorities. Some sources of Mark 1:41 ha
 moved to anger rather than compassion, which makes sense in terms of this context.
 
 \end{section}
+
+\begin{notesection}{Notes}
+
+\notetext{about-this-doc}{About this document}
+\notesummary{Criteria for inclusion; sources of translations}
+I've added my own notes on points that I was originally unable to understand by reading the gospels,
+including some information about the political, social, and historical context. I've attempted to
+omit all material that, in my amateur opinion, seems to be a later overlay that would not have
+been recognizable to Jesus or his contemporaries. An interesting and well known amateur project along
+the same lines is the Thomas Jefferson Bible. Unlike Jefferson, I haven't used scientific plausibility
+as a criterion to exclude what otherwise seem to have been real, contemporary psychological experiences.
+My criteria are arbitrary and personal, and they have the unfortunate side-effect of cutting out many
+wonderful and culturally familiar sayings and events, such as ``Man shall not live by bread alone.''
+
+Unless otherwise noted, all English translations of the Gospels and Acts are from the World English Bible.
+I've changed a few phrases to more direct, memorable, or familiar ones, such as ``brood of vipers,''
+or ``arrested'' rather than ``taken into custody.''
+Translations of Josephus are from Whiston, 1737.
+
+\notetext{john-provocative}{John's provocation}
+\notesummary{John's actions and the symbolism of the Jordan were extremely politically provocative to the Judean client regime.}
+The client regime claimed a monopoly on purification rituals,
+which included both ablutions by the priests and lucrative blood sacrifices.
+John was not only challenging this monopoly but also (as Josephus carefully omits), by doing them in the
+Jordan, evoking a politically supercharged echo of the return of the Jews to the promised land:
+
+\bible{Numbers 27:12}{Yahweh said to Moses, ``Go up into this mountain of Abarim, and see the land which I have given to the children of Israel.''}
+
+There follows in Numbers 27-29 an extremely lengthy list of commands about animal sacrifices to be made to God
+once the people have been returned to the promised land. In Deuteronomy 34, God gives Moses another view of the
+promised land, reiterating that it is for the offspring of Abraham --- i.e., in the ears of John's followers, not
+to the Romans.
+Moses's successor Joshua then miraculously crosses the Jordan (Joshua 6) and reconquers Canaan from the evil foreigners.
+
+\notetext{john-ascetic}{John's asceticism}
+A strain of asceticism was one of many currents of thought that were in the air among the many
+contending schools of Judaism that included the Essene sect. It has been suggested that John was an Essene, but we don't know.
+
+\notetext{john-social}{Authenticity of John's social teachings in Matthew}
+
+\personal{The social teachings in Luke 3:10 seem unlikely to be authentic. John preached to Jews in the wilderness along the Jordan river. What were
+tax collectors and Roman soldiers doing there, among that group? Unlike Jesus, John did not, as suggested here,
+gather people around him to live his teachings by sharing the necessities of daily life.}
+
+\notetext{family-interp}{Family background}
+
+The Nazareans in Mark 6:2 are insulting Jesus by referring to him as Mary's son. As the eldest brother, he should be referred to as Joseph's son.
+The implication is that he is illegitimate.\footnote{Aslan, p.~37}  See also Matthew 13:55-56 and Acts 1:14. 
+The word τέκτονος, usually translated as ``carpenter,'' can also just mean a landless manual laborer\footnote{Crossan}
+or be Roman slang for an ignorant peasant.\footnote{Aslan, p. 34} 
+
+\notetext{james}{Jesus's brother James the Just}
+
+After the crucifixion, Jesus's brother James took over his mission in Jerusalem.
+He managed to coexist for a long time with the Temple while beginning to build
+what would become the Christian church. He engaged in a bitter and long-running epistolary
+and in-person conflict with Paul over the direction of the movement, and especially about the extent to
+which the Mosaic law had to be followed. This resulted in the Council of Jerusalem in 50 CE.
+
+\notetext{jesus-galilee}{Galilee}
+As a Galilean, Jesus would have spoken Aramaic
+with a distinctive accent.  The Galileans had a reputation as
+flinty hill people who didn't pay their taxes and were
+anticlerical and resentful of Judea and the Temple.  Galilee produced
+many bandits (Greek singular λῃστής), who in some cases may have had
+political or Robin Hood overtones.
+
+\notetext{literacy}{Jesus' ability to read}
+Any opportunities for Jesus to learn to read or write would have been
+extremely scarce, hence the disbelief expressed in Mark 6:2. Most
+experts believe that Jesus was unable to read.
+Jesus later shows a deep knowledge of the Hebrew Bible and is able to debate its
+fine points skillfully. He would probably have had to gain this knowledge by listening in
+a synagogue, possibly in Nazareth, if the tiny town had one.\footnote{Aslan, p.~35, claims that no such synagogue existed. The
+synagogue at Capernaum, which the gospels record Jesus as visiting as an adult, was 40 km away.}
+
+\notetext{jesus-writing}{Scribes; Jesus' ability to write}
+
+If Jesus could write, it was
+probably at the level of ``craftsman's literacy,'' such as the ability
+to record business records. John, in the course of the story of the woman
+taken in adultery, says,
+
+\john{8:6} But Jesus stooped down and wrote on the ground with his finger.
+
+The verb translated here as ``wrote'' is κατέγραφεν, which could mean either that he wrote or that he drew.
+
+Writing at the highest level of literacy
+was more like a specialized profession, that of a scribe. Because
+scribes were often officials in the hated Roman regime, analogous to lawyers and bureaucrats, most
+references to them in the NT are negative, as in Mark 1:16. A scribe can also indicate one
+who is literate and religiously learned, and this class of people was also
+suspect because they were part of a leisure class associated with the exploitative practices of the Temple.
+
+Jesus would have had no reason to write down any of his teachings, either himself or with the
+help of a scribe. His followers were illiterate, and the Kingdom of God was coming, so there was
+no need to record anything for future generations.
+
+\end{notesection}
 
 \end{document}
