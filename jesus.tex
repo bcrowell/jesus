@@ -6,8 +6,9 @@
 \usepackage{parskip} % https://tex.stackexchange.com/a/57/6853
 
 \usepackage{navigator}
-\usepackage{graphicx}
+\usepackage{graphics}
 \usepackage{xcolor}
+\usepackage{url}
 
 \newcommand{\quotesize}{\normalsize{}}
 \newcommand{\maintextquotesize}{\renewcommand{\quotesize}{\large{}}}
@@ -19,6 +20,7 @@
 \newcommand{\gospelmark}[2]{\bible{Mark #1}{#2}}
 \newcommand{\luke}[2]{\bible{Luke #1}{#2}}
 \newcommand{\john}[2]{\bible{John #1}{#2}}
+\newcommand{\thomas}[2]{\bible{Thomas #1}{#2}}
 
 \newcommand{\personal}[1]{\emph{Personal opinion:\/ #1}}
 
@@ -78,9 +80,10 @@ ca. 4 BCE-39 CE --- Judea is ruled by tetrarchs and an ethnarch, including Herod
 66-73 --- First Jewish–Roman War. The temple in Jerusalem is destroyed. Gospel of Mark written around this time.
 
 \begin{section}{John the Baptist}
-The Gospel of Mark is likely the first written record of Jesus, and it begins not with a description of Jesus but of John the Baptist.
+
+\comm{The Gospel of Mark is likely the first written record of Jesus, and it begins not with a description of Jesus but of John the Baptist.
 We know nothing reliable about John's birthplace or date of birth. Luke, in the course of a miraculous birth story, claims that
-John came from a priestly family:
+John came from a priestly family:}
 
 \luke{1:5}{There was in the days of Herod, the king of Judea, a certain priest named Zacharias [John's father], of the priestly division of Abijah.}
 
@@ -193,7 +196,7 @@ son of Mary and brother of James, Joses, Judah, and Simon? Aren’t his
 sisters here with us?'' So they were offended at him.}
 
 \comm{
-Josephus (20-9-1) confirms that Jesus has a brother James, who was later to become the movement's main leader
+Josephus (Antiquities 20-9-1) confirms that Jesus has a brother James, who was later to become the movement's main leader
 in Jerusalem \note{james}:
 }
 
@@ -485,6 +488,7 @@ You are the salt of the earth, but if the salt has lost its flavor, with what wi
 
 \matthew{6:1}{
     ``Be careful that you don't do your charitable giving before men, to be seen by them, or else you have no reward from your Father who is in heaven.    Therefore, when you do merciful deeds, don't sound a trumpet before yourself, as the hypocrites do in the synagogues and in the streets, that they may get glory from men. Most certainly I tell you, they have received their reward.    But when you do merciful deeds, don't let your left hand know what your right hand does,    so that your merciful deeds may be in secret, then your Father who sees in secret will reward you openly.
+
    ``When you pray, you shall not be as the hypocrites, for they love to stand and pray in the synagogues and in the corners of the streets, that they may be seen by men. Most certainly, I tell you, they have received their reward.    But you, when you pray, enter into your inner room, and having shut your door, pray to your Father who is in secret; and your Father who sees in secret will reward you openly.    In praying, don't use vain repetitions as the Gentiles do; for they think that they will be heard for their much speaking.    Therefore don't be like them, for your Father knows what things you need before you ask him.    Pray like this:
 }
 
@@ -508,10 +512,11 @@ For yours is the Kingdom, the power, and the glory forever. Amen.'
 \matthew{6:14}{
    ``For if you forgive men their trespasses, your heavenly Father will also forgive you.    But if you don't forgive men their trespasses, neither will your Father forgive your trespasses.
 
-   ``Moreover when you fast, don't be like the hypocrites, with sad faces. For they disfigure their faces that they may be seen by men to be fasting. Most certainly I tell you, they have received their reward.    But you, when you fast, anoint your head and wash your face,    so that you are not seen by men to be fasting, but by your Father who is in secret; and your Father, who sees in secret, will reward you.
+   ``Moreover when you fast, don't be like the hypocrites, with sad faces. For they disfigure their faces that they may be seen by men to be fasting. Most certainly I tell you, they have received their reward.    But you, when you fast, anoint your head and wash your face,    so that you are not seen by men to be fasting, but by your Father who is in secret; and your Father, who sees in secret, will reward you.}
 
 \subhead{Antimaterialism}
 
+\matthew{6:19}{
    ``Don't lay up treasures for yourselves on the earth, where moth and rust consume, and where thieves break through and steal;    but lay up for yourselves treasures in heaven, where neither moth nor rust consume, and where thieves don't break through and steal;    for where your treasure is, there your heart will be also.
 
    ``The lamp of the body is the eye. If therefore your eye is sound, your whole body will be full of light.    But if your eye is evil, your whole body will be full of darkness. If therefore the light that is in you is darkness, how great is the darkness!
@@ -538,7 +543,9 @@ For yours is the Kingdom, the power, and the glory forever. Amen.'
 
    ``Beware of false prophets, who come to you in sheep's clothing, but inwardly are ravening wolves.    By their fruits you will know them. Do you gather grapes from thorns or figs from thistles?    Even so, every good tree produces good fruit, but the corrupt tree produces evil fruit.    A good tree can't produce evil fruit, neither can a corrupt tree produce good fruit.    Every tree that doesn't grow good fruit is cut down and thrown into the fire.    Therefore by their fruits you will know them.
 
-   ``Not everyone who says to me, `Lord, Lord,' will enter into the Kingdom of Heaven, but he who does the will of my Father who is in heaven.
+   ``Not everyone who says to me, `Lord, Lord,' will enter into the Kingdom of 
+Heaven,\footnote{Contradicted by Paul in Romans 10:13, ``Whoever will call on the name of the Lord will be saved''
+(quoting Joel 2:32, which refers to salvation from a plague of locusts).} but he who does the will of my Father who is in heaven.
 }
 
 \matthew{7:24}{
@@ -592,6 +599,46 @@ Jesus radically attacks the traditional structure of the family.
   He awoke and rebuked the wind, and said to the sea, ``Peace! Be still!'' The wind ceased and there was a great calm.   He said to them, ``Why are you so afraid? How is it that you have no faith?''
 
   They were greatly afraid and said to one another, ``Who then is this, that even the wind and the sea obey him?'' 
+}
+
+\subhead{The Gospel of Thomas}
+
+\comm{The following sayings by Jesus are translated from the Gospel of Thomas by T.P.~Brown, \url{freelyreceive.net}. I omit the ``Jesus saids''
+and ``Whoever has ears, let him hears.''}
+
+\thomas{40}{
+A vine has been planted without the Father -- and (as) it is not vigorous, it shall be pulled up by its roots and destroyed.\footnote{Cf.~Matthew 15:13.}
+}
+
+\thomas{63}{
+There was a wealthy person who possessed much money, and he said: I shall utilize my money so that I may sow and reap and replant, to fill my storehouses with fruit so that I lack nothing. This is what he thought in his heart--and that night he died.\footnote{Cf.~Luke 12:16}
+}
+
+\thomas{64}{
+A person had guests. And when he had prepared the banquet, he sent his slave to summon the guests. He went to the first, he says to him: `My master invites thee.' He replies: `I owe some money to some merchants; they are coming to me towards evening, I shall go to place an order with them--I beg to be excused from the banquet.' He went to another, he says to him: `My master has invited thee.' He replies to him: `I have bought a house and they require me for a day, I shall have no leisure-(time).' He came to another, he says to him: `My master invites thee.' He replies to him: `My friend is to be married and I shall arrange a feast; I shall not be able to come--I beg to be excused from the banquet.' He went to another, he says to him: `My master invites thee.' He replies to him: `I have bought a villa; I go to receive the rent, I shall not be able to come--I beg to be excused.' The slave came, he said to his master: `Those whom thou have invited to the banquet have asked to be excused.' The master says to his slave: `Go out to the roads, bring those whom thou shall find so that they may feast.'
+}
+
+\thomas{65}{
+A kind person had a vineyard. He gave it out to cultivators, so that they would work it and he would receive its fruit from them. He sent his slave, so that the tenants would give to him the fruit of the vineyard. They seized his slave, they beat him--a little more and they would have killed him. The slave went, he told it to his master. His master said: Perhaps they did not recognize him. He sent another slave--the tenants beat him also. Then the owner sent his son. He said: Perhaps they will obey my son. Since those tenants knew that he was the heir of the vineyard, they seized him, they killed him.\footnote{Mark 12:1 adds an explicit allegory with an ending in which God, as the owner of the vineyard, kills the tenants.}
+}
+
+\thomas{89}{
+Why do you wash the outside of the chalice? Do you not comprehend that He who creates the inside, is also He who creates the outside?\footnote{Cf.~Mark
+23:25, which the Jesus Seminar consider less likely to be authentic.}
+}
+
+\thomas{97}{
+The Sovereignty of the [Father] is like a woman who is carrying a jar full of grain. (While) she was walking [on a] distant road, the handle of the jar broke, the grain streamed out behind her onto the road. She did not observe (it), she had noticed no accident. (When) she arrived in her house, she set the jar down—she found it empty.
+}
+
+\thomas{98}{
+The Sovereignty of the Father is like someone who wishes to slay an eminent person. In his house he drew forth the sword, he thrust it into the wall in order to ascertain whether his hand would prevail. Then he slew the eminent person.
+}
+
+\comm{Jesus's followers ask when the Sovereignty [of the Father] will come:--}
+
+\thomas{113}{
+It shall not come by watching (for it). They will not say `Behold here!' or `Behold there!' But rather the Sovereignty of the Father is spread upon the earth, and humans do not see it.
 }
 
 \end{section}
@@ -961,7 +1008,9 @@ of routine crucifixions.
 
   Likewise, also the chief priests mocking among themselves with the scribes said, ``He saved others. He can't save himself.   Let the Christ, the King of Israel, now come down from the cross, that we may see and believe him.'' Those who were crucified with him also insulted him.
 
-  When the sixth hour had come, there was darkness over the whole land until the ninth hour.   At the ninth hour Jesus cried with a loud voice, saying, ``Eloi, Eloi, lama sabachthani?'' which is, being interpreted, ``My God, my God, why have you forsaken me?''\footnote{Jesus repeats Psalms 22:1.}
+  When the sixth hour had come, there was darkness over the whole land until the ninth hour.   At the ninth hour Jesus cried with a loud voice, saying, ``Eloi, Eloi, lama sabachthani?'' which is, being interpreted, ``My God, my God, why have
+you forsaken me?''\footnote{Different gospels record different words spoken by Jesus, the only agreement being this lament, which is
+given in both Mark and Matthew 27:46. Jesus quotes Psalms 22:1, in Aramaic. In all versions, his words on the cross are from scripture.}
 
   Some of those who stood by, when they heard it, said, ``Behold, he is calling Elijah.''
 
@@ -983,15 +1032,61 @@ In Mark 16:1-8, three women find the tomb empty.
 
 \begin{section}{After the crucifixion}
 
+\comm{\personal{The NT records that Jesus appeared, resurrected in the flesh, to a number of his followers.
+Despite the inconsistencies and historical impossibilities in these accounts, it seems clear that they
+are accounts of actual psychological experiences at the time, and that the first 
+appearances were to female followers.\note{resurrected-appearances-reality}}}
+
+\subhead{Appearance to the women}
+
+\comm{The original version of Mark ended at 16:8. The following was added later.}
+
 \gospelmark{16:9}{
 Now when he had risen early on the first day of the week, he appeared first to Mary Magdalene, from whom he had cast out seven demons.   She went and told those who had been with him, as they mourned and wept.   When they heard that he was alive and had been seen by her, they disbelieved.
 
-  After these things he was revealed in another form to two of them as they walked, on their way into the country.   They went away and told it to the rest. They didn't believe them, either.
+  After these things he was revealed in another form to two of them as they walked, on their way into the country.   
+}
+
+\subhead{Appearance to the apostles and other disciples}
+
+\gospelmark{16:13}{
+[The women\footnote{possibly including the other women ``who had been with him''}] went away and told it to the rest. They didn't believe them, either.
 
   Afterward he was revealed to the eleven themselves as they sat at the table; and he rebuked them for their unbelief and hardness of heart, because they didn't believe those who had seen him after he had risen.   He said to them, ``Go into all the world and preach the Good News to the whole creation.    He who believes and is baptized will be saved; but he who disbelieves will be condemned.    These signs will accompany those who believe: in my name they will cast out demons; they will speak with new languages;    they will take up serpents; and if they drink any deadly thing, it will in no way hurt them; they will lay hands on the sick, and they will recover.''
 
   So then the Lord, after he had spoken to them, was received up into heaven and sat down at the right hand of God.   They went out and preached everywhere, the Lord working with them and confirming the word by the signs that followed. Amen.
 }
+
+\matthew{28:8}{
+ [After finding the tomb empty, Mary Magdalene and the other Mary] departed quickly from the tomb with fear and great joy, and ran to bring his disciples word.   As they went to tell his disciples, behold, Jesus met them, saying, ``Rejoice!''
+They came and took hold of his feet, and worshiped him.
+
+  Then Jesus said to them, ``Don't be afraid. Go tell my brothers  that they should go into Galilee, and there they will see me.'' 
+}
+
+\comm{Paul's account was written down before those in the gospels and Acts, but is less directly connected to witnesses' accounts from Palestine.}
+
+\bible{1 Corinthians 15:3}{
+For I delivered to you first of all that which I also received: that Christ died for our sins according to the Scriptures,   that he was buried, that he was raised on the third day according to the Scriptures,   and that he appeared to Cephas, then to the twelve.   Then he appeared to over five hundred brothers at once, most of whom remain until now, but some have also fallen asleep.   Then he appeared to James, then to all the apostles,   and last of all, as to the child born at the wrong time, he appeared to me [Paul] also.\footnote{at his conversion on the road to Damascus}
+}
+
+\john{20:18}{
+Mary Magdalene came and told the disciples that she had seen the Lord, and that he had said these things to her.   When therefore it was evening on that day, the first day of the week, and when the doors were locked where the disciples were assembled, for fear of the Jews, Jesus came and stood in the middle and said to them, ``Peace be to you.''
+
+  When he had said this, he showed them his hands and his side. The disciples therefore were glad when they saw the Lord.   Jesus therefore said to them again, ``Peace be to you. As the Father has sent me, even so I send you.''   When he had said this, he breathed on them, and said to them, ``Receive the Holy Spirit!    If you forgive anyone's sins, they have been forgiven them. If you retain anyone's sins, they have been retained.''
+
+  But Thomas, one of the twelve, called Didymus, wasn't with them when Jesus came.   The other disciples therefore said to him, ``We have seen the Lord!''
+But he said to them, ``Unless I see in his hands the print of the nails, put my finger into the print of the nails, and put my hand into his side, I will not believe.''
+
+  After eight days, again his disciples were inside and Thomas was with them. Jesus came, the doors being locked, and stood in the middle, and said, ``Peace be to you.''   Then he said to Thomas, ``Reach here your finger, and see my hands. Reach here your hand, and put it into my side. Don't be unbelieving, but believing.''
+
+  Thomas answered him, ``My Lord and my God!''
+
+  Jesus said to him, ``Because you have seen me, you have believed. Blessed are those who have not seen and have believed.''
+
+  Therefore Jesus did many other signs in the presence of his disciples, which are not written in this book;   but these are written that you may believe that Jesus is the Christ, the Son of God, and that believing you may have life in his name. 
+}
+
 \end{section}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1056,10 +1151,13 @@ After the crucifixion, Jesus's brother James took over his mission in Jerusalem.
 He managed to coexist for a long time with the Temple while beginning to build
 what would become the Christian church. He engaged in a bitter and long-running epistolary
 and in-person conflict with Paul over the direction of the movement, and especially about the extent to
-which the Mosaic law had to be followed. This resulted in the Council of Jerusalem in 50 CE.
+which the Mosaic law had to be followed. This resulted in the Council of Jerusalem in 50 CE (Acts 15).
+James's life, and his biological relationship to Jesus, are well documented in a number of
+historical sources, such as Josephus (Antiquities 20-9-1), Clement of Alexandria, and a long passage from Hegesippus quoted by Eusebius.
+A claimed ossuary box, publicly announced in 2002, has been the subject of vigorous academic and legal disputes.
 
 \notetext{jesus-galilee}{Galilee}
-As a Galilean, Jesus would have spoken Aramaic
+As a Galilean, Jesus would have spoken a dialect of Aramaic,
 with a distinctive accent.  The Galileans had a reputation as
 flinty hill people who didn't pay their taxes and were
 anticlerical and resentful of Judea and the Temple.  Galilee produced
@@ -1070,10 +1168,17 @@ political or Robin Hood overtones.
 Any opportunities for Jesus to learn to read or write would have been
 extremely scarce, hence the disbelief expressed in Mark 6:2. Most
 experts believe that Jesus was unable to read.
-Jesus later shows a deep knowledge of the Hebrew Bible and is able to debate its
+Jesus later shows a deep knowledge of the scripture and is able to debate its
 fine points skillfully. He would probably have had to gain this knowledge by listening in
 a synagogue, possibly in Nazareth, if the tiny town had one.\footnote{Aslan, p.~35, claims that no such synagogue existed. The
 synagogue at Capernaum, which the gospels record Jesus as visiting as an adult, was 40 km away.}
+Jesus's final words according to Mark 15:34 and Matthew 27:46 are a quotation from Psalms, in Aramaic, which
+suggests that these two evangelists thought that his knowledge of the scriptures was in Aramaic.
+This would make sense because an illiterate Palestinian Jew at this time would have heard
+the scriptures orally in Aramaic. These translations, called targums, were not written down until
+after the destruction of the Temple in 70 CE. During Jesus's lifetime, only the Hebrew version was
+written down. Passages such as Mark 2:25 and Luke 4:16 clearly portrat Jesus as literate, but
+this is likely an inauthentic later overlay.
 
 \notetext{jesus-writing}{Scribes; Jesus' ability to write}
 
@@ -1135,6 +1240,30 @@ the wisdom sayings presented in this sermon.}
 Jesus is sometimes violent (Mark 11:15, the assault on the moneychangers in the temple),
 angry (Mark 1:41, anger with the leper), and in his religious displays sometimes ostentatious (Mark 11:9, the entrance
 into Jerusalem).
+
+\notetext{resurrected-appearances-reality}{Reality of the resurrection experiences}
+\notesummary{It is a historical reality that Jesus's followers believed they had seen him resurrected; that these
+appearances were in the flesh; and that he appeared first to his female followers.}
+
+\personal{Jesus's appearances, in the flesh, to his followers after his death seem to be records
+of his followers' actual psychological experiences, whether real ones, hallucinations, or mass ecstatic events.}
+
+The details of the times and places of Jesus's post-resurrection appearances are inconsistent in the
+different Gospels, as is the list of which witnesses are present when. It therefore doesn't make much
+sense to try to judge whose ecstatic experiences actually happened using criteria such as internal consistency
+or historical possibility, time, place.
+
+If anything, Jesus's appearances to his female followers are the most
+reliable, despite being described in connection with the historically impossible tomb. Women were not considered reliable witnesses,
+and if it had not already been popularly believed that they were the first to see the risen Jesus, before the apostles or any other men, the
+evangelists would have been unlikely to invent such a thing. (Paul edits the women back out in 1 Corinthians 15:3.)
+
+It's conceivable that the people who described these appearances were consciously lying, but this is hard to square
+with the fact that ``liars make bad martyrs.'' We have several cases in which the witnesses are well-identified
+historical people, martyred for their beliefs. These include Paul, Peter, and Jesus's brother James.
+Paul and Peter were killed by Nero, while Josephus says that James was sentenced by the Sanhedrin to death by stoning,
+during a gap in Roman oversight between two procurators. (Other accounts have him thrown from the temple and then clubbed to death.)
+
 
 \end{notesection}
 
