@@ -1,6 +1,13 @@
-\documentclass[11pt,a5paper,twoside]{article}
+% Format for booklet to be printed on letter paper.
+% See `book' target in Makefile.
+% Bindingoffset refers to the gutter.
+\documentclass[10pt,twoside]{book}
+\usepackage[paperheight=8.5in,paperwidth=5.5in,bindingoffset=0.3in, left=0.5in, right=0.5in]{geometry}
 
-\usepackage[bindingoffset=0.3in, left=0.5in, right=0.5in]{geometry} % https://tex.stackexchange.com/q/80520/6853
+
+% a5 format with gutter, for lulu:
+% \documentclass[10pt,a5paper,twoside]{book}
+% \usepackage[bindingoffset=0.3in, left=0.5in, right=0.5in]{geometry} % https://tex.stackexchange.com/q/80520/6853
 
 \usepackage{fontspec}
 \setmainfont{DejaVu Serif} % This font looks like ass. But it makes greek work.
@@ -71,7 +78,7 @@
 
 \sloppypar
 
-\includegraphics[width=\textwidth]{cleansing-temple}
+\includegraphics[width=\textwidth]{figs/cleansing-temple}
 
 {\footnotesize \emph{Tissot, Les vendeurs chassés du Temple}}
 
