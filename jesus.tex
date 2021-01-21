@@ -1,12 +1,12 @@
 % Format for booklet to be printed on letter paper.
 % See `book' target in Makefile.
 % Bindingoffset refers to the gutter.
-\documentclass[10pt,twoside]{book}
+\documentclass[10pt,twoside]{article} % not book, because then sections get numbered 0.x
 \usepackage[paperheight=8.5in,paperwidth=5.5in,bindingoffset=0.3in, left=0.5in, right=0.5in]{geometry}
 
 
 % a5 format with gutter, for lulu:
-% \documentclass[10pt,a5paper,twoside]{book}
+% \documentclass[10pt,a5paper,twoside]{article}
 % \usepackage[bindingoffset=0.3in, left=0.5in, right=0.5in]{geometry} % https://tex.stackexchange.com/q/80520/6853
 
 \usepackage{fontspec}
@@ -108,7 +108,9 @@ ca. 4 BCE-39 CE --- Judea is ruled by tetrarchs and an ethnarch, including Herod
 
 \begin{section}{John the Baptist}
 
-\comm{The Gospel of Mark is likely the first written record of Jesus, and it begins not with a description of Jesus but of John the Baptist.
+\comm{The Gospel of Mark is likely the first written biographical material about Jesus,\footnote{The Pauline epistles were probably 10-20 years
+earlier, but assume their audience is already familiar with the gospels.}
+and it begins not with a description of Jesus but of John the Baptist.
 We know nothing reliable about John's birthplace or date of birth. Luke, in the course of a miraculous birth story, claims that
 John came from a priestly family:}
 
@@ -118,7 +120,7 @@ John came from a priestly family:}
 John was a great celebrity of his time and place, meriting a long passage in
 Josephus (much longer than the brief mention of Jesus\footnote{Antiquities of the Jews 20-9;
 excluding the likely forgery in 18-3}).
-Josephus says:\footnote{18-5-2} % https://www.gutenberg.org/files/2848/2848-h/2848-h.htm#link182HCH0005
+Josephus says:\footnote{Antiquities 18-5-2} % https://www.gutenberg.org/files/2848/2848-h/2848-h.htm#link182HCH0005
 }
 
 \begin{quotetext}
@@ -136,7 +138,7 @@ by righteousness.
 
 \comm{
 Josephus's description of the significance of the baptism ritual is probably
-distorted and sanitized in order to compromise between John's popularity and Joseph's sympathies
+distorted and sanitized in order to compromise between John's popularity and Josephus's sympathies
 with the Roman-Jewish regime. Mark gives a different description: --
 }
 
@@ -146,8 +148,12 @@ Judea and all those of Jerusalem went out to him. They were baptized
 by him in the Jordan river, confessing their sins.}
 
 \comm{
-John's actions and the symbolism of the Jordan were extremely politically provocative to the Judean client regime \note{john-provocative}.
-Mark describes John as an ascetic.\note{john-ascetic}
+John's actions and the symbolism of the Jordan were extremely politically provocative both to Rome and to
+to the Judean client regime and its centralized theocracy at the temple in Jerusalem.\note{john-provocative}.
+}
+
+\comm{
+Mark describes John as an ascetic:\note{john-ascetic}
 }
 
 \gospelmark{1:6}{John was clothed with camel’s hair and a leather belt around his waist. He ate locusts
@@ -165,7 +171,7 @@ in addition,
 and hurling abuse directly in the face of the priestly class as a ``brood of vipers'' (3:7). We don't
 know whether John's message was actually apocalyptic or so explicitly antiestablishment.
 
-Luke recounts further social teachings of John (possibly inauthentic \note{john-social}):
+Luke recounts further social teachings of John (likely inauthentic \note{john-social}):
 }
 
 \luke{3:10}{The multitudes asked him, ``What then must we do?''
@@ -233,8 +239,8 @@ in Jerusalem \note{james}:
 
 \comm{
 Jesus grew up in the tiny village of Nazareth, in Galilee.\note{jesus-galilee}
-We don't know whether he learned to read, but he must have had an opportunity
-at least to hear the Hebrew Bible and learn it thoroughly \note{literacy}.
+He probably never learned to read, but he must have had an opportunity
+at least to hear an oral Aramaic version (targum) of the Jewish Bible and learn it thoroughly \note{literacy}.
 
  At periodic festivals,
 Jews who were able to afford to travel gathered in great crowds at the temple in
@@ -263,17 +269,8 @@ by John:
 
 \gospelmark{1:9}{In those days, Jesus came from Nazareth of Galilee, and was baptized by John in the Jordan.}
 
-\comm{Others include Simon Peter, apostle and founder of the Church, and his brother:}
-
-\john{1:40}{One of the two [disciples] who heard John [describing 
-Jesus as the messiah] and followed him was Andrew, Simon Peter’s
-brother. He first found his own brother, Simon, and said to him, “We
-have found the Messiah!” (which is, being interpreted, Christ). He
-brought him to Jesus. Jesus looked at him and said, “You are Simon the
-son of Jonah. You shall be called Cephas” (which is by interpretation,
-Peter).}
-
-\comm{Others are described in Acts:}
+\comm{Others include Simon Peter, apostle and founder of the Church (p.~\pageref{peter-called}), and his brother, the apostle Andrew (John 1:40);
+ as well as more who are described in Acts:}
 
 \bible{Acts 19:1}{While Apollos [an Alexandrian Jew who was a follower of John and then converted in Acts 18] was at Corinth, Paul, having passed through the upper country, came to Ephesus and found certain disciples. He said to them, “Did you receive the Holy Spirit when you believed?”
 They said to him, ``No, we haven’t even heard that there is a Holy Spirit.''
@@ -281,11 +278,6 @@ They said to him, ``No, we haven’t even heard that there is a Holy Spirit.''
 They said, ``Into John’s baptism.''
  Paul said, ``John indeed baptized with the baptism of repentance, saying to the people that they should believe in the one who would come after him, that is, in Christ Jesus.''
  When they heard this, they were baptized in the name of the Lord Jesus.}
-
-\comm{
-John carves out his own rogue franchise, competing with the temple in Jerusalem by
-offering free purification rituals, with a message that is threatening to both Rome and the priesthood.
-}
 
 \luke{3:18}{Then with many other exhortations [John] preached good news to the people, but Herod the tetrarch, being reproved by him for Herodias, his brother’s wife, and for all the evil things which Herod had done, added this also to them all, that he shut up John in prison.}
 
@@ -335,12 +327,12 @@ is absent from Mark.}}}
 
 \comm{
 Jesus gathers followers and creates his
-own illicit knock-off of John's illicit knock-off of the Temple's rites.
+own knock-off of John's illicit knock-off of the Temple's rites.
 Where John baptized people and then sent them home, Jesus gathers followers and 
 carries out an itinerant lifestyle ministry. 
 
-The first four apostles are Simon Peter, Andrew, John, and James the Greater. Simon Peter
-is traditionally considered the founder of the Catholic Church. Andrew's name is Greek rather than Jewish.
+The first four apostles are Simon Peter (\note{peter}), Andrew, John, and James the Greater. Simon Peter and Andrew
+are described in John 1:40 as having been followers of John the Baptist.\label{peter-called}
 }
 
 \gospelmark{1:23}{Immediately there was in their synagogue [in Capernaum] a man with an unclean spirit, and he cried out,   saying, ``Ha! What do we have to do with you, Jesus, you Nazarene? Have you come to destroy us? I know you who you are: the Holy One of God!''
@@ -357,23 +349,27 @@ is traditionally considered the founder of the Catholic Church. Andrew's name is
 
 \comm{
 It would have been more culturally expected for a healer to set up shop in one place. Jesus doesn't do so, nor does
-he accept money. \personal{The reason for the secrecy and hiding is unclear. Following John's execution, Jesus may be
-effectively on the run from the law, or at least afraid of attracting attention from the authorities. He may be unwelcome
-in Capernaum as a follower of the subversive John, and afraid of being run out of town as he was in Nazareth. Or the secrecy
-may be Mark's literary prefiguring of the motif of the messianic secret.}
+he accept money. The reason for the secrecy and hiding is clarified in the following incident.
 }
 
 \subhead{The leper and the paralytic; calling Matthew}
 
 \gospelmark{1:40}{A leper came to him, begging him, kneeling down to him, and saying to him, ``If you want to, you can make me clean.''
   Being moved with anger,\footnote{Some sources have ``compassion.''} he stretched out his hand, and touched him, and said to him, ``I want to. Be made clean.''   When he had said this, immediately the leprosy departed from him and he was made clean.   He strictly warned him and immediately sent him out,   and said to him, ``See that you say nothing to anybody, but go show yourself to the priest and offer for your cleansing the things which Moses commanded, for a testimony to them.''
+
   But he went out, and began to proclaim it much, and to spread about the matter, so that Jesus could no more openly enter into a city, but was outside in desert places. People came to him from everywhere. }
 
 \comm{
-The leper is ritually unclean according to the book of Leviticus, and the Temple has a prescribed
-and expensive ritual for cleaning him. Jesus's command to go to the Temple is therefore ironic
-or an intended slap in the face to the authorities. His initial anger makes sense in terms of this context.
-}
+The leper is ritually unclean, and the Temple has a prescribed
+and expensive ritual for cleansing him, which is laid out in detail in Leviticus 13:2. Jesus's command to go to the Temple is therefore ironic
+or an intended slap in the face to the authorities. His initial anger makes sense in terms of this context, because the leper is asking him
+to do something illicit and contrary to the Mosaic law.
+
+The reason for the secrecy in Mark 1:35 is now more clear. Following John's execution, Jesus is a former member of
+what the Romans would consider an outlaw group of seditionists or λῃσται (bandits).  Futhermore, both John and Jesus have challenged the
+centralized theocracy's monopoly on purification ceremonies. As a subversive, he has
+just been run out of town in Nazareth. Mark may also be weaving these facts into a
+literary prefiguring of his motif of the messianic secret.}
 
 \gospelmark{2:1}{When he entered again into Capernaum after some days, it was heard that he was at home.   Immediately many were gathered together, so that there was no more room, not even around the door; and he spoke the word to them.   Four people came, carrying a paralytic to him.   When they could not come near to him for the crowd, they removed the roof where he was. When they had broken it up, they let down the mat that the paralytic was lying on.   Jesus, seeing their faith, said to the paralytic, ``Son, your sins are forgiven you.''
 
@@ -384,7 +380,9 @@ or an intended slap in the face to the authorities. His initial anger makes sens
 He arose, and immediately took up the mat and went out in front of them all, so that they were all amazed and glorified God, saying, ``We never saw anything like this!''}
 
 \gospelmark{2:13}{He went out again by the seaside. All the multitude came to him, and he taught them.   As he passed by, he saw 
-[Matthew\footnote{The apostle. Named in Mark as Levi the son of Alphaeus.}] sitting at the tax office. He said to him, ``Follow me.'' And he arose and followed him.}
+[Matthew\footnote{The apostle. Named in Mark as Levi the son of Alphaeus.}] sitting at the tax office.\footnote{Tax collectors were hated
+both because the taxes were exorbitant and because the taxes were being collected for the Romans.}
+He said to him, ``Follow me.'' And he arose and followed him.}
 
 \subhead{Eating with sinners; parable of the bridegroom; foraging on the sabbath}
 
@@ -945,9 +943,15 @@ his disciples asked him, ``Where do you want us to go and prepare that you may e
 
   He sent two of his disciples and said to them, ``Go into the city, and there a man carrying a pitcher of water will meet you. Follow him,    and wherever he enters in, tell the master of the house, `The Teacher says, ``Where is the guest room, where I may eat the Passover with my disciples?'' '    He will himself show you a large upper room furnished and ready. Get ready for us there.''
 
-  His disciples went out, and came into the city, and found things as he had said to them, and they prepared the Passover.
+  His disciples went out, and came into the city, and found things as he had said to them, and they prepared the Passover. 
 
-  When it was evening he came with the twelve.   As they sat and were eating, Jesus said, ``Most certainly I tell you, one of you will betray me--he who eats with me.''
+When it was evening he came with the twelve.
+}
+
+\comm{John 13:1-20 now has Jesus wash his disciples' feet.}
+
+\gospelmark{14:18}{
+     As they sat and were eating, Jesus said, ``Most certainly I tell you, one of you will betray me--he who eats with me.''
 
   They began to be sorrowful, and to ask him one by one, ``Surely not I?'' And another said, ``Surely not I?''
 
@@ -1149,10 +1153,15 @@ or ``arrested'' rather than ``taken into custody.''
 Translations of Josephus are from Whiston, 1737.
 
 \notetext{john-provocative}{John's provocation}
-\notesummary{John's actions and the symbolism of the Jordan were extremely politically provocative to the Judean client regime.}
-The client regime claimed a monopoly on purification rituals,
-which included both ablutions by the priests and lucrative blood sacrifices.
-John was not only challenging this monopoly but also (as Josephus carefully omits), by doing them in the
+\notesummary{John's actions and the symbolism of the Jordan are extremely politically provocative to the Roman-Judean regime.}
+The Judean client regime and its centralized theocracy at the temple in Jerusalem
+has its own slaves and agricultural land, but its most lucrative source of revenue is
+administering the complicated rituals prescribed in Leviticus,
+which include both ablutions by the priests and blood sacrifices.
+John carves out his own rogue franchise, competing with them by
+offering free purification rituals.
+
+John is not only challenging this monopoly but also (as Josephus carefully omits), by doing them in the
 Jordan, evoking a politically supercharged echo of the return of the Jews to the promised land:
 
 \bible{Numbers 27:12}{Yahweh said to Moses, ``Go up into this mountain of Abarim, and see the land which I have given to the children of Israel.''}
@@ -1212,7 +1221,7 @@ suggests that these two evangelists thought that his knowledge of the scriptures
 This would make sense because an illiterate Palestinian Jew at this time would have heard
 the scriptures orally in Aramaic. These translations, called targums, were not written down until
 after the destruction of the Temple in 70 CE. During Jesus's lifetime, only the Hebrew version was
-written down. Passages such as Mark 2:25 and Luke 4:16 clearly portrat Jesus as literate, but
+written down. Passages such as Mark 2:25 and Luke 4:16 clearly portray Jesus as literate, but
 this is likely an inauthentic later overlay.
 
 \notetext{jesus-writing}{Scribes; Jesus' ability to write}
@@ -1236,6 +1245,13 @@ suspect because they were part of a leisure class associated with the exploitati
 Jesus would have had no reason to write down any of his teachings, either himself or with the
 help of a scribe. His followers were illiterate, and the Kingdom of God was coming, so there was
 no need to record anything for future generations.
+
+\notetext{peter}{Peter}
+Simon Peter is traditionally considered the founder of the Catholic Church and its first pope.
+He is a married man (Mark 1:30; 1 Corinthians 9:5). Although his brother Andrew's name is Greek (``Manly''),
+we presume that they were both Jews, since they were followers of John the Baptist (John 1:40). Jesus names him Aramic Cephas (Greek Peter), ``Rock,''
+which suggests a rough character, and he is sometimes violent
+(John 18:10) but sometimes a coward (Mark 14:72).
 
 \notetext{sermon-on-the-mount}{The sermon on the mount}
 

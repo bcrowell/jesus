@@ -1,4 +1,5 @@
-jesus.pdf:
+jesus.pdf: jesus.tex
+	xelatex jesus
 	xelatex jesus
 
 book: jesus.pdf
