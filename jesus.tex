@@ -16,9 +16,20 @@
 \usepackage{parskip} % https://tex.stackexchange.com/a/57/6853
 
 \usepackage{navigator}
-\usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{url}
+\usepackage{ifthen}
+\usepackage{graphicx}
+\graphicspath{ {./figs/} }
+\newcommand{\fig}[2][0.4]{
+    \ifthenelse{\isodd{\pageref{fig:#2}}}{}{\hfill}
+    \includegraphics[width=#1\textwidth]{#2}\label{fig:#2}
+    \ifthenelse{\isodd{\pageref{fig:#2}}}{\hfill}{}
+    \par
+}
+% At standard size of 0.4\textwidth, should be at least 460 px to give 300 dpi.
+
+\newcommand{\artcredit}[3]{#2, #3, p.~\pageref{fig:#1}}
 
 \newcommand{\quotesize}{\normalsize{}}
 \newcommand{\maintextquotesize}{\renewcommand{\quotesize}{\large{}}}
@@ -72,15 +83,14 @@
 %----------------------------------------------------------------------------------
 
 
+
 \begin{document}
 
 {\huge\textbf{A life of Jesus}}
 
 \sloppypar
 
-\includegraphics[width=\textwidth]{figs/cleansing-temple}
-
-{\footnotesize \emph{Tissot, Les vendeurs chassés du Temple}}
+\includegraphics[width=\textwidth]{cleansing-temple}\label{fig:cleansing-temple}
 
 % https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_The_Merchants_Chased_from_the_Temple_(Les_vendeurs_chass%C3%A9s_du_Temple)_-_James_Tissot.jpg
 
@@ -134,6 +144,8 @@ ca. 4 BCE-39 CE --- Judea is ruled by tetrarchs and an ethnarch, including Herod
 
 \pagebreak
 
+\fig{john-in-the-wilderness}
+
 \begin{section}{John the Baptist}
 
 \comm{The Gospel of Mark is likely the first written biographical material about Jesus,\footnote{The Pauline epistles were probably 10-20 years
@@ -141,6 +153,8 @@ earlier, but assume their audience is already familiar with the gospels.}
 and it begins not with a description of Jesus but of John the Baptist.
 We know nothing reliable about John's birthplace or date of birth. Luke, in the course of a miraculous birth story, claims that
 John came from a priestly family:}
+
+
 
 \luke{1:5}{There was in the days of Herod, the king of Judea, a certain priest named Zacharias [John's father], of the priestly division of Abijah.}
 
@@ -318,6 +332,8 @@ Christian religion for consumption by Romans, who did not want to be part of a r
 of the empire.}}}
 \end{section}
 
+\fig{jesus-in-wilderness}
+
 \begin{section}{Early mission and calling of the apostles}
 
 \luke{3:23}{Jesus himself, when he began to teach, was about thirty years old\ldots}
@@ -337,6 +353,8 @@ is absent from Mark.}}}
 \luke{4:22}{All testified about him and wondered at the gracious words which proceeded out of his mouth; and they said, ``Isn't this Joseph's son?''}
 
 \luke{4:28}{ They were all filled with wrath in the synagogue as they heard these things.   They rose up, threw him out of the city, and led him to the brow of the hill that their city was built on, that they might throw him off the cliff.   But he, passing through the middle of them, went his way.}
+
+\fig{fishers-of-men}
 
 \subhead{Capernaum; The first apostles}
 
@@ -380,7 +398,7 @@ It would have been more culturally expected for a healer to set up shop in one p
 he accept money. The reason for the secrecy and hiding is clarified in the following incident.
 }
 
-\subhead{The leper and the paralytic; calling Matthew}
+\subhead{The leper}
 
 \gospelmark{1:40}{A leper came to him, begging him, kneeling down to him, and saying to him, ``If you want to, you can make me clean.''
   Being moved with anger,\footnote{Some sources have ``compassion.''} he stretched out his hand, and touched him, and said to him, ``I want to. Be made clean.''   When he had said this, immediately the leprosy departed from him and he was made clean.   He strictly warned him and immediately sent him out,   and said to him, ``See that you say nothing to anybody, but go show yourself to the priest and offer for your cleansing the things which Moses commanded, for a testimony to them.''
@@ -390,14 +408,24 @@ he accept money. The reason for the secrecy and hiding is clarified in the follo
 \comm{This scene has a seditious point that would be obvious to first-century Palestinian Jews, and this clarifies
 the secrecy and hiding, as well as Jesus's initial anger (\note{leper-seditious}).}
 
+\fig{healing-the-paralytic}
+
+\subhead{The paralytic}
+
 \gospelmark{2:1}{When he entered again into Capernaum after some days, it was heard that he was at home.   Immediately many were gathered together, so that there was no more room, not even around the door; and he spoke the word to them.   Four people came, carrying a paralytic to him.   When they could not come near to him for the crowd, they removed the roof where he was. When they had broken it up, they let down the mat that the paralytic was lying on.   Jesus, seeing their faith, said to the paralytic, ``Son, your sins are forgiven you.''
 
   But there were some of the scribes sitting there and reasoning in their hearts,   ``Why does this man speak blasphemies like that? Who can forgive sins but God alone?''
 
   Immediately Jesus, perceiving in his spirit that they so reasoned within themselves, said to them, ``Why do you reason these things in your hearts?    Which is easier, to tell the paralytic, `Your sins are forgiven;' or to say, `Arise, and take up your bed, and walk?'    
-But that you may know that the Son of Man\note{son-of-man} has authority on earth to forgive sins''--he said to the paralytic--    ``I tell you, arise, take up your mat, and go to your house.'' 
+But that you may know that the Son of Man\note{son-of-man} 
+has authority\footnote{The issue of authority, implicit in the story of the leper, is here made explicit.}
+on earth to forgive sins''--he said to the paralytic--    ``I tell you, arise, take up your mat, and go to your house.'' 
 
 He arose, and immediately took up the mat and went out in front of them all, so that they were all amazed and glorified God, saying, ``We never saw anything like this!''}
+
+
+
+\subhead{Calling Matthew}
 
 \gospelmark{2:13}{He went out again by the seaside. All the multitude came to him, and he taught them.   As he passed by, he saw 
 [Matthew\footnote{The apostle. Named in Mark as Levi the son of Alphaeus.}] sitting at the tax office.\footnote{Tax collectors were hated
@@ -439,6 +467,8 @@ John the Baptist never deputizes anyone to act on his behalf, but Jesus does:
 }
 
 \end{section}
+
+\fig[0.75]{meal-in-house-of-matthew}
 
 \begin{section}{Sinners, tax collectors, and gentiles}
 \subhead{Eating with sinners; parables; foraging on the sabbath}
@@ -482,6 +512,8 @@ with a second, closely parallel parable about a lost coin.}
 John was an ascetic;
 Jesus rejects John's asceticism, but retains an antimaterialist slant.
 }
+
+\fig{plucking-corn-on-the-sabbath}
 
 \subhead{Foraging on the sabbath}
 
@@ -630,6 +662,8 @@ For yours is the Kingdom, the power, and the glory forever. Amen.'
    ``For if you forgive men their trespasses, your heavenly Father will also forgive you.    But if you don't forgive men their trespasses, neither will your Father forgive your trespasses.
 
    ``Moreover when you fast, don't be like the hypocrites, with sad faces. For they disfigure their faces that they may be seen by men to be fasting. Most certainly I tell you, they have received their reward.    But you, when you fast, anoint your head and wash your face,    so that you are not seen by men to be fasting, but by your Father who is in secret; and your Father, who sees in secret, will reward you.}
+
+\fig{mammon}
 
 \subhead{Antimaterialism}
 
@@ -1432,7 +1466,7 @@ this is likely an inauthentic later overlay.
 
 \notetext{bethsaida}{Bethsaida}
 Several locations have been proposed for the town of Bethsaida, some on the Sea of Galilee and some not.
-The biblican references may be to more than one of these places.
+The biblical references may be to more than one of these places.
 The bible describes three of the apostles as coming from Bethsaida. In Mark 6:45, Jesus sends
 the disciples to Bethsaida while he goes away by himself to pray on a mountain.
 
@@ -1484,7 +1518,7 @@ literary prefiguring of his motif of the messianic secret.
 ``A son of man'' is a Hebrew phrase meaning a human being. In Hebrew, it's the same as ``a son of Adam,'' since
 the name Adam just means ``man.'' But frequently
 Jesus uses it with ``the,'' as a title when referring to 
-himself.\footnote{The grammatical distinction is clear in both Greek but not  in the Aramaic language that Jesus spoke.
+himself.\footnote{The grammatical distinction is clear in Greek but not  in the Aramaic language that Jesus probably spoke.
 The Greek ``ο γιος του ανθρώπου'' in Mark 2:10 has the definite article ``ο.'' 
 Since the original versions were written in all capital letters, there was no possibility
 of using capitalization as in English to indicate a title.}
@@ -1508,7 +1542,7 @@ subsequent ``everlasting dominion,'' ongoing and already established by ``one li
 ``came with the clouds of the sky.''\footnote{This portion of Daniel was originally written in Hebrew.}
 
 The Jesus
-Seminar, on the other hand, opines that the non-messianic meanings would have been the original ones, with
+Seminar, on the other hand, opines that the non-messianic meanings would have been the original ones intended by Jesus, with
 the messianic interpretation being layered on after the crucifixion. On this reading, either the discussion of authority
 in Mark 2:10 was added after this shift in meanings, or else the historical Jesus is claiming that any human being at all
 has the authority to heal, as in Psalms 8:4: ``What is the son of man, that you care for him? 
@@ -1604,6 +1638,34 @@ during a gap in Roman oversight between two procurators. (Other accounts have hi
 
 
 \end{notesection}
+
+\begin{section}{Art}
+\artcredit{cleansing-temple}{Tissot}{Les vendeurs chassés du Temple}
+% https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_The_Merchants_Chased_from_the_Temple_(Les_vendeurs_chass%C3%A9s_du_Temple)_-_James_Tissot.jpg
+
+\artcredit{john-in-the-wilderness}{Bosch}{John the Baptist in the wilderness}
+% https://commons.wikimedia.org/wiki/File:Hieronymus_Bosch_090FXD.jpg
+
+\artcredit{jesus-in-wilderness}{Kramskoy}{Jesus in the wilderness}
+% https://en.wikipedia.org/wiki/File:Christ_in_the_Wilderness_-_Ivan_Kramskoy_-_Google_Cultural_Institute.jpg
+
+\artcredit{fishers-of-men}{Veneziano}{Calling of the apostles Peter and Andrew}
+% https://commons.wikimedia.org/wiki/File:15_Lorenzo_Veneziano,_Calling_of_the_Apostles_Peter_and_Andrew._1370_Staatliche_Museen,_Berlin..jpg
+
+\artcredit{healing-the-paralytic}{Rode}{The paralytic lowered through the roof}
+% https://commons.wikimedia.org/wiki/File:Christus_heilet_einen_Gichtbr%C3%BCchigen.jpg
+
+\artcredit{meal-in-house-of-matthew}{Tissot}{Le repas chez Mathieu}
+% https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_The_Meal_in_the_House_of_Matthew_(Le_repas_chez_Mathieu)_-_James_Tissot.jpg
+
+\artcredit{plucking-corn-on-the-sabbath}{Doré}{Foraging for grain on the sabbath}
+% https://commons.wikimedia.org/wiki/File:The_Bible_panorama,_or_The_Holy_Scriptures_in_picture_and_story_(1891)_(14785018525).jpg
+
+\artcredit{mammon}{De Morgan}{The worship of Mammon}
+% https://commons.wikimedia.org/wiki/File:The_worship_of_Mammon.jpg
+
+
+\end{section}
 
 \begin{section}{List of works consulted}
 
