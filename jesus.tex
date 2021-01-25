@@ -15,19 +15,32 @@
 
 \usepackage{parskip} % https://tex.stackexchange.com/a/57/6853
 
+\usepackage{etoolbox} % supplies \ifstrempty
 \usepackage{navigator}
 \usepackage{xcolor}
 \usepackage{url}
 \usepackage{ifthen}
 \usepackage{graphicx}
 \graphicspath{ {./figs/} }
-\newcommand{\fig}[2][0.4]{
+\newcommand{\doimage}[2]{\includegraphics[width=#1\textwidth]{#2}\label{fig:#2}}
+\newcommand{\figbasic}[4]{ % width, fig, caption, caption width
     \ifthenelse{\isodd{\pageref{fig:#2}}}{}{\hfill}
-    \includegraphics[width=#1\textwidth]{#2}\label{fig:#2}
+    \ifstrempty{#3}{
+      \doimage{#1}{#2}
+    }{
+      % https://tex.stackexchange.com/questions/119799/text-next-to-image
+      \makebox{\doimage{#1}{#2} \\ #3}
+    }
     \ifthenelse{\isodd{\pageref{fig:#2}}}{\hfill}{}
     \par
 }
 % At standard size of 0.4\textwidth, should be at least 460 px to give 300 dpi.
+\newcommand{\fig}[2][0.4]{
+  \figbasic{#1}{#2}{}{}
+}
+\newcommand{\figsidecaption}[4]{ % width of fig, width of caption, fig, caption
+  \figbasic{#1}{#3}{#4}{#2}
+}
 
 \newcommand{\artcredit}[3]{#2, #3, p.~\pageref{fig:#1}}
 
@@ -423,7 +436,7 @@ on earth to forgive sins''--he said to the paralytic--    ``I tell you, arise, t
 
 He arose, and immediately took up the mat and went out in front of them all, so that they were all amazed and glorified God, saying, ``We never saw anything like this!''}
 
-
+\comm{In John 2:1-11, Jesus turns water in to wine at the wedding at Cana.}
 
 \subhead{Calling Matthew}
 
@@ -767,7 +780,8 @@ The Sovereignty of the Father is like someone who wishes to slay an eminent pers
 
 \comm{Jesus's followers ask when the Sovereignty [of the Father] will come:--}
 
-\thomas{113}{
+\thomas{113}{\footnote{Luke 17:20 is similar. These verses create difficulties for any theory that the kingdom of God was
+conceptualized by Jesus and his followers as a purely political revolution.}
 It shall not come by watching (for it). They will not say `Behold here!' or `Behold there!' But rather the Sovereignty of the Father is spread upon the earth, and humans do not see it.
 }
 
@@ -895,7 +909,7 @@ but their heart is far from me.
    They worship me in vain,
 teaching as doctrines the commandments of men.'
 
-   ``For you set aside the commandment of God, and hold tightly to the tradition of men--the washing of pitchers and cups, and you do many other such things.''   He said to them, ``Full well do you reject the commandment of God, that you may keep your tradition.    For Moses said, `Honor your father and your mother;' and, `He who speaks evil of father or mother, let him be put to death.'    But you say, `If a man tells his father or his mother, ``Whatever profit you might have received from me is Corban,''\footnote{the treasury of the temple in Jerusalem} ' '' that is to say, given to God,    ``then you no longer allow him to do anything for his father or his mother,    making void the word of God by your tradition which you have handed down. You do many things like this.''
+   ``For you set aside the commandment of God, and hold tightly to the tradition of men--the washing of pitchers and cups, and you do many other such things.''   He said to them, ``Full well do you reject the commandment of God, that you may keep your tradition.    For Moses said, `Honor your father and your mother;' and, `He who speaks evil of father or mother, let him be put to death.'    But you say, `If a man tells his father or his mother, ``Whatever profit you might have received from me is Corban,''\footnote{the treasury of the temple in Jerusalem, or sacrificial offerings there} ' '' that is to say, given to God,    ``then you no longer allow him to do anything for his father or his mother,    making void the word of God by your tradition which you have handed down. You do many things like this.''
 
   He called all the multitude to himself and said to them, ``Hear me, all of you, and understand.    There is nothing from outside of the man that going into him can defile him; but the things which come out of the man are those that defile the man.    If anyone has ears to hear, let him hear!''
 
@@ -997,16 +1011,33 @@ As he was going out into the way, one ran to him, knelt before him, and asked hi
 
 \subhead{Entering Jerusalem}
 
+\john{2:13}{
+The Passover of the Jews was at hand, and Jesus went up to Jerusalem.
+}
+
 \comm{Mark 11:1-11 has Jesus entering Jerusalem triumphantly. The assault on the temple is framed by
 a metaphorical story about a fig tree, which represents the temple.}
 
-\gospelmark{11:12}{ The next day, when they had come out from Bethany, he was hungry.   Seeing a fig tree afar off having leaves, he came to see if perhaps he might find anything on it. When he came to it, he found nothing but leaves, for it was not the season for figs.   Jesus told it, ``May no one ever eat fruit from you again!'' and his disciples heard it. }
+% Fig trees, figs, and fig leaves occur in many places in the bible, so, WP's assertion that the tree represents "Israel"
+% or the Jewish people can also work, but it's ambiguous an not necessarily an important difference, by metonymy.
+% https://en.wikipedia.org/wiki/Cursing_the_fig_tree
+
+\gospelmark{11:12}{The next day, when they had come out from Bethany, he was hungry.   Seeing a fig tree afar off having leaves, he came to see if perhaps he might find anything on it. When he came to it, he found nothing but leaves, for it was not the season for figs.   Jesus told it, ``May no one ever eat fruit from you again!'' and his disciples heard it. }
+
+\fig{cursing-fig-tree}
 
 \subhead{Attacking the temple}
 
-\gospelmark{11:15}{
-They came to Jerusalem, and Jesus entered into the temple and began to throw out those who sold and those who bought in the temple, and overthrew the money changers' tables and the seats of those who sold the doves.   He would not allow anyone to carry merchandise through the temple.   He taught, saying to them, ``Isn't it written, `My house will be called a house of prayer for all the nations?' But you have made it a den of robbers!''
-  The chief priests and the scribes heard it, and sought how they might destroy him. For they feared him, because all the multitude was astonished at his teaching. 
+\john{2:14}{
+He found in the temple those who sold oxen, sheep, and doves, and the changers of money sitting.   He made a whip of cords and drove all out of the temple, both the sheep and the oxen; and he poured out the changers' money and overthrew their tables.   To those who sold the doves, he said, ``Take these things out of here! Don't make my Father's house a marketplace!''\footnote{Mark 11:17 has ``den of robbers,'' which is meant to parallel
+Jeremiah 7:11, not to suggest that Jesus was upset primarily because of economic exploitation or white-collar crime.}
+}
+
+\fig{money-changers-william-hole}
+
+\gospelmark{11:18}{
+  The chief priests and the scribes heard it, and sought how they might destroy him.
+  For they feared him, because all the multitude was astonished at his teaching. 
 }
 
 \gospelmark{11:19}{
@@ -1025,8 +1056,21 @@ They came again to Jerusalem, and as he was walking in the temple, the chief pri
 Jesus said to them, ``Neither will I tell you by what authority I do these things.'' 
 }
 
+\comm{The version of this discourse presented here is Mark's.
+Matthew 21:23-23 has a different version with a longer and much more direct attack on the  scribes and Pharisees.
+The following fragment helps to explain Jesus's motivation for his earlier physical assault (Matthew 21):
+}
+
+\figsidecaption{0.4}{0.6}{altar}{The high priest sacrifices a goat on the altar of the temple at Jerusalem, referred to in Matthew 23:18.}
+
+% See Aslan, p. 6, which describes the horns, and p. 8, the breastplate.
+
+\matthew{23:16}{
+``Woe to you, you blind guides, who say, `Whoever swears by the temple, it is nothing; but whoever swears by the gold of the temple, he is obligated.'    You blind fools! For which is greater, the gold or the temple that sanctifies the gold?    And, `Whoever swears by the altar, it is nothing; but whoever swears by the gift that is on it, he is obligated?'    You blind fools! For which is greater, the gift, or the altar that sanctifies the gift?
+}
+
 \gospelmark{12:1}{
-   He began to speak to them in parables.}
+   He began to speak to [the priests] in parables.}
 
 \subhead{Parable of the banquet}
 
@@ -1105,7 +1149,7 @@ They said to him, ``Caesar's.''
 They marveled greatly at him. 
 }
 
-\subhead{The resurrection}
+\subhead{Debating Sadducees on the resurrection}
 
 \gospelmark{12:18}{
 Some Sadducees, who say that there is no resurrection, came to him. They asked him, saying,   ``Teacher, Moses wrote to us, `If a man's brother dies and leaves a wife behind him, and leaves no children, that his brother should take his wife and raise up offspring for his brother.'   There were seven brothers. The first took a wife, and dying left no offspring.   The second took her, and died, leaving no children behind him. The third likewise;   and the seven took her and left no children. Last of all the woman also died.   In the resurrection, when they rise, whose wife will she be of them? For the seven had her as a wife.''
@@ -1159,6 +1203,8 @@ his disciples asked him, ``Where do you want us to go and prepare that you may e
   His disciples went out, and came into the city, and found things as he had said to them, and they prepared the Passover. 
 }
 
+\fig[1]{last-supper}
+
 \subhead{The last supper}
 
 \gospelmark{14:17}{
@@ -1199,6 +1245,8 @@ He said to his disciples, ``Sit here while I pray.''   He took with him Peter, J
   Again he went away and prayed, saying the same words.   Again he returned and found them sleeping, for their eyes were very heavy; and they didn't know how to answer him.   He came the third time and said to them, ``Sleep on now, and take your rest. It is enough. The hour has come. Behold, the Son of Man is betrayed into the hands of sinners.    Arise! Let's get going. Behold, he who betrays me is at hand.''
 }
 
+\fig{judas-kiss}
+
 \subhead{Jesus's arrest}
 
 \gospelmark{14:43}{
@@ -1214,13 +1262,15 @@ He said to his disciples, ``Sit here while I pray.''   He took with him Peter, J
   They all left him, and fled.   A certain young man followed him, having a linen cloth thrown around himself over his naked body. The young men grabbed him,   but he left the linen cloth and fled from them naked.   They led Jesus away to the high priest. All the chief priests, the elders, and the scribes came together with him.
 }
 
-\subhead{Peter's denial}
-
 \gospelmark{14:54}{
   Peter had followed him from a distance, until he came into the court of the high priest. He was sitting with the officers, and warming himself in the light of the fire.}
 
 \comm{Mark 14:55-64 gives an account of a trial before the Sanhedrin, which cannot be historical for a variety of reasons.\footnote{Aslan, pp.~156-158;
 Funk, pp.~121-122.}}
+
+\fig{denial-of-saint-peter}
+
+\subhead{Peter's denial}
 
 \gospelmark{14:66}{
   As Peter was in the courtyard below, one of the maids of the high priest came,   and seeing Peter warming himself, she looked at him and said, ``You were also with the Nazarene, Jesus!''
@@ -1275,8 +1325,11 @@ given in both Mark and Matthew 27:46. Jesus quotes Psalms 22:1, in Aramaic. In a
   One ran, and filling a sponge full of vinegar, put it on a reed and gave it to him to drink, saying, ``Let him be. Let's see whether Elijah comes to take him down.''
 
   Jesus cried out with a loud voice, and gave up the spirit.   The veil of the temple was torn in two from the top to the bottom.   
-When the centurion, who stood by opposite him, saw him cry out and breathe his last, he said, ``Truly this man was the Son of God!''
+When the centurion, who stood by opposite him, saw him cry out and breathe his last, he said, ``Truly this man was the Son of God!''}
 
+\fig[0.6]{what-our-lord-saw-from-the-cross-detail}
+
+\gospelmark{15:40}{
   There were also women watching from afar, among whom were both Mary Magdalene and Mary the mother of James the less and of Joses, and Salome;   who, when he was in Galilee, followed him and served him; and many other women who came up with him to Jerusalem.
 }
 
@@ -1332,8 +1385,11 @@ For I delivered to you first of all that which I also received: that Christ died
 \john{20:18}{
 Mary Magdalene came and told the disciples that she had seen the Lord, and that he had said these things to her.   When therefore it was evening on that day, the first day of the week, and when the doors were locked where the disciples were assembled, for fear of the Jews, Jesus came and stood in the middle and said to them, ``Peace be to you.''
 
-  When he had said this, he showed them his hands and his side. The disciples therefore were glad when they saw the Lord.   Jesus therefore said to them again, ``Peace be to you. As the Father has sent me, even so I send you.''   When he had said this, he breathed on them, and said to them, ``Receive the Holy Spirit!    If you forgive anyone's sins, they have been forgiven them. If you retain anyone's sins, they have been retained.''
+  When he had said this, he showed them his hands and his side. The disciples therefore were glad when they saw the Lord.   Jesus therefore said to them again, ``Peace be to you. As the Father has sent me, even so I send you.''   When he had said this, he breathed on them, and said to them, ``Receive the Holy Spirit!    If you forgive anyone's sins, they have been forgiven them. If you retain anyone's sins, they have been retained.''}
 
+\fig{doubting-thomas}
+
+\john{20:24}{
   But Thomas, one of the twelve, called Didymus, wasn't with them when Jesus came.   The other disciples therefore said to him, ``We have seen the Lord!''
 But he said to them, ``Unless I see in his hands the print of the nails, put my finger into the print of the nails, and put my hand into his side, I will not believe.''
 
@@ -1670,8 +1726,32 @@ during a gap in Roman oversight between two procurators. (Other accounts have hi
 \artcredit{mammon}{De Morgan}{The worship of Mammon}
 % https://commons.wikimedia.org/wiki/File:The_worship_of_Mammon.jpg
 
-\artcred{sower}{Dalziel Brothers}{The sower}
+\artcredit{sower}{Dalziel Brothers}{The sower}
 % https://commons.wikimedia.org/wiki/File:The_Sower_(The_Parables_of_Our_Lord_and_Saviour_Jesus_Christ)_MET_DP835795.jpg
+
+\artcredit{cursing-fig-tree}{Ilyas Basim Khuri Bazzi Rahib}{Jesus Curses the Fig Tree}
+% https://commons.wikimedia.org/wiki/File:Ilyas_Basim_Khuri_Bazzi_Rahib_-_Jesus_Curses_the_Fig_Tree_-_Walters_W59258A_-_Full_Page.jpg
+
+\artcredit{money-changers-william-hole}{William Hole}{Jesus Casts Out The Money Changers}
+% https://commons.wikimedia.org/wiki/File:William_Hole_Jesus_Casts_Out_The_Money_Changers.jpg
+
+\artcredit{altar}{Northrop}{High Priest Offering Sacrifice of a Goat}
+% https://commons.wikimedia.org/wiki/File:High_Priest_Offering_Sacrifice_of_a_Goat.jpg
+
+\artcredit{last-supper}{Giampietrino, after da Vinci}{The last supper}
+% https://commons.wikimedia.org/wiki/File:Giampietrino-Last-Supper-ca-1520.jpg
+
+\artcredit{judas-kiss}{Marstrand}{Judaskysset}
+% https://commons.wikimedia.org/wiki/File:Wilhelm_Marstrand,_Judaskysset,_udateret,_0122NMK,_Nivaagaards_Malerisamling.jpg
+
+\artcredit{denial-of-saint-peter}{Caravaggio}{The denial of Saint Peter}
+% https://commons.wikimedia.org/wiki/File:The_Denial_of_Saint_Peter-Caravaggio_(1610).jpg
+
+\artcredit{what-our-lord-saw-from-the-cross-detail}{Tissot}{Ce que voyait Notre-Seigneur sur la Croix (detail)}
+% https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_What_Our_Lord_Saw_from_the_Cross_(Ce_que_voyait_Notre-Seigneur_sur_la_Croix)_-_James_Tissot.jpg
+
+\artcredit{doubting-thomas}{Caravaggio}{The Incredulity of Saint Thomas}
+% https://commons.wikimedia.org/wiki/File:Caravaggio_-_The_Incredulity_of_Saint_Thomas.jpg
 
 \end{section}
 
