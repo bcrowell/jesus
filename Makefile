@@ -1,6 +1,9 @@
 jesus.pdf: jesus.tex
 	xelatex jesus
 	xelatex jesus
+	makeindex jesus
+	makeindex jesus.adx -o jesus.and
+	xelatex jesus
 
 book: jesus.pdf
 	pdfbook2 jesus.pdf

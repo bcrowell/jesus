@@ -15,6 +15,7 @@
 
 \usepackage{parskip} % https://tex.stackexchange.com/a/57/6853
 
+\usepackage{makeidx}
 \usepackage{etoolbox} % supplies \ifstrempty
 \usepackage{navigator}
 \usepackage{xcolor}
@@ -49,7 +50,7 @@
 \newcommand{\notequotesize}{\renewcommand{\quotesize}{\normalsize{}}}
 \newcommand{\comm}[1]{\begingroup \color{black!50} #1\endgroup}
 \newenvironment{quotetext}{\begingroup\quotesize}{\endgroup}
-\newcommand{\bible}[2]{\begin{quotetext}\textbf{#1} #2\end{quotetext}}
+\newcommand{\bible}[2]{\begin{quotetext}\textbf{#1}\index[texts]{#1} #2\end{quotetext}}
 \newcommand{\matthew}[2]{\bible{Matthew #1}{#2}}
 \newcommand{\gospelmark}[2]{\bible{Mark #1}{#2}}
 \newcommand{\luke}[2]{\bible{Luke #1}{#2}}
@@ -84,7 +85,7 @@
   % #1 is title, such as Notes
   % modeled on activity environment in lmcommon.sty, invoked by begin_notes() in eruby_util.rb
   \setcounter{secnumdepth}{0}          % Don't number this section.
-  \section{#1}
+  \section*{#1}
   \setcounter{secnumdepth}{2}          % Start numbering sections again.
                                        % The \setcounter{secnumdepth} stuff is the way the author of titlesec suggests doing
                                        % this. Using section* messes up footers & toc. 
@@ -95,7 +96,14 @@
 }
 %----------------------------------------------------------------------------------
 
+% multiple indexes, see
+% http://www.texfaq.org/FAQ-multind (documents three different packages)
 
+\usepackage{index}
+\makeindex
+\newindex{texts}{adx}{and}{Index of texts} 
+
+%----------------------------------------------------------------------------------
 
 \begin{document}
 
@@ -110,8 +118,8 @@
 \hfill
 
 The purpose of this document is to construct, for my own study, a life of Jesus with a single narrative
-thread, comprised mainly of a backbone of text from contemporary sources such as the gospels and 
-Josephus \note{about-this-doc}.
+thread, comprised mainly of a backbone of text from contemporary sources such as the gospels,
+Josephus, and Tacitus \note{about-this-doc}.
 
 \hfill B.~Crowell, 2021
 
@@ -178,7 +186,7 @@ excluding the likely forgery in 18-3}).
 Josephus says:\footnote{Antiquities 18-5-2} % https://www.gutenberg.org/files/2848/2848-h/2848-h.htm#link182HCH0005
 }
 
-\begin{quotetext}
+\begin{quotetext}\index[texts]{Josephus}
 Now some of the Jews thought that the destruction of Herod [Antipater]'s army [ca.~36 CE, by the Nabateans] came
 from God, and that very justly, as a punishment of what he did against
 John, that was called the Baptist: for Herod slew him, who was a good
@@ -240,7 +248,7 @@ He said to them, ``Extort from no one by violence, neither accuse anyone wrongfu
 Josephus continues with the story of John's doom:
 }
 
-\begin{quotetext}
+\begin{quotetext}\index[texts]{Josephus}
 Now when [many] others came in crowds about him, for
 they were very greatly moved [or pleased] by hearing his words, Herod,
 who feared lest the great influence John had over the people might put
@@ -411,7 +419,7 @@ It would have been more culturally expected for a healer to set up shop in one p
 he accept money. The reason for the secrecy and hiding is clarified in the following incident.
 }
 
-\subhead{The leper}
+\subhead{The leper}\index{leper}
 
 \gospelmark{1:40}{A leper came to him, begging him, kneeling down to him, and saying to him, ``If you want to, you can make me clean.''
   Being moved with anger,\footnote{Some sources have ``compassion.''} he stretched out his hand, and touched him, and said to him, ``I want to. Be made clean.''   When he had said this, immediately the leprosy departed from him and he was made clean.   He strictly warned him and immediately sent him out,   and said to him, ``See that you say nothing to anybody, but go show yourself to the priest and offer for your cleansing the things which Moses commanded, for a testimony to them.''
@@ -1295,6 +1303,15 @@ He answered, ``So you say.''
   But Jesus made no further answer, so that Pilate marveled. 
 }
 
+\comm{Tacitus (quoted at greater length on p.~\pageref{tacitus}) confirms Jesus's execution at the hands of Pontius Pilate:}\index[texts]{Tacitus}
+
+\begin{quotetext}
+Christus, from whom the name had its origin, suffered
+the extreme penalty during the reign of Tiberius at the hands of one
+of our procurators, Pontius Pilatus \ldots
+\end{quotetext}
+
+
 \comm{In Mark 15:6-14 Pilate pardons the robber Barabbas rather than Jesus. This episode is unlikely to be historical.
 The depiction of Pilate as wavering and lacking ill will is designed to make Christianity palatable to Romans.\footnote{Aslan, p.~148; Crossan,
 p.~141} The historical Pilate, as recorded by Josephus, is scornful of the Jews in general, and oversees large numbers
@@ -1402,13 +1419,53 @@ But he said to them, ``Unless I see in his hands the print of the nails, put my 
   Therefore Jesus did many other signs in the presence of his disciples, which are not written in this book;   but these are written that you may believe that Jesus is the Christ, the Son of God, and that believing you may have life in his name. 
 }
 
+\subhead{Tacitus}\label{tacitus}\index[texts]{Tacitus}% also quoted briefly earlier
+
+\comm{There was a great fire in 64 CE during the reign of Nero. The Roman historian wrote the following around 116 CE (translated
+by Church and Brodribb).}
+
+\begin{quotetext}
+But all human efforts, all the lavish gifts of the emperor, and the
+propitiations of the gods, did not banish the sinister belief that the
+conflagration was the result of an order. Consequently, to get rid of
+the report, Nero fastened the guilt and inflicted the most exquisite
+tortures on a class hated for their abominations, called Chrestians by
+the populace. Christus, from whom the name had its origin, suffered
+the extreme penalty during the reign of Tiberius at the hands of one
+of our procurators, Pontius Pilatus, and a most mischievous
+superstition, thus checked for the moment, again broke out not only in
+Judea, the first source of the evil, but even in Rome, where all
+things hideous and shameful from every part of the world find their
+centre and become popular. Accordingly, an arrest was first made of
+all who pleaded guilty; then, upon their information, an immense
+multitude was convicted, not so much of the crime of firing the city,
+as of hatred against mankind.
+\end{quotetext}
+
+\begin{quotetext}
+Mockery of every sort was added to their deaths. Covered with the
+skins of beasts, they were torn by dogs and perished, or were nailed
+to crosses, or were doomed to the flames and burnt, to serve as a
+nightly illumination, when daylight had expired. Nero offered his
+gardens for the spectacle, and was exhibiting a show in the circus,
+while he mingled with the people in the dress of a charioteer or stood
+aloft on a car. Hence, even for criminals who deserved extreme and
+exemplary punishment, there arose a feeling of compassion; for it was
+not, as it seemed, for the public good, but to glut one man's cruelty,
+that they were being destroyed.
+\end{quotetext}
+
+
 \end{section}
+
+\vfill\pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                        notes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{notesection}{Notes}
 
@@ -1419,7 +1476,8 @@ including some information about the political, social, and historical context. 
 omit all material that, in my amateur opinion, seems to be a later overlay that would not have
 been recognizable to Jesus or his contemporaries. An interesting and well known amateur project along
 the same lines is the Thomas Jefferson Bible. Unlike Jefferson, I haven't used scientific plausibility
-as a criterion to exclude what otherwise seem to have been real, contemporary psychological experiences.
+as a criterion to exclude what otherwise may have been real, contemporary psychological experiences.
+The miracles are there, as are the appearances of the resurrected Jesus.
 My criteria are arbitrary and personal, and they have the unfortunate side-effect of cutting out many
 wonderful and culturally familiar sayings and events, such as ``Man shall not live by bread alone.''
 
@@ -1689,16 +1747,21 @@ reliable, despite being described in connection with the historically impossible
 and if it had not already been popularly believed that they were the first to see the risen Jesus, before the apostles or any other men, the
 evangelists would have been unlikely to invent such a thing. (Paul edits the women back out in 1 Corinthians 15:3.)
 
-It's conceivable that the people who described these appearances were consciously lying, but this is hard to square
-with the fact that ``liars make bad martyrs.'' We have several cases in which the witnesses are well-identified
-historical people, martyred for their beliefs. These include Paul, Peter, and Jesus's brother James.
-Paul and Peter were killed by Nero, while Josephus says that James was sentenced by the Sanhedrin to death by stoning,
-during a gap in Roman oversight between two procurators. (Other accounts have him thrown from the temple and then clubbed to death.)
-
+It's conceivable that the people who described these appearances were
+consciously lying, but this is hard to square with the fact that
+``liars make bad martyrs.'' We have several cases in which the
+witnesses are well-identified historical people, martyred for their
+beliefs. These include Paul, Peter, and Jesus's brother James.  Paul
+and Peter were killed by Nero, while Josephus says that James was
+sentenced by the Sanhedrin to death by stoning, during a gap in Roman
+oversight between two procurators. (Other accounts have him thrown
+from the temple and then clubbed to death.)  On the other hand, we do
+have Peter lying repeatedly after Jesus's arrest, although it's the
+opposite sort of lie.
 
 \end{notesection}
 
-\begin{section}{Art}
+\hfill\pagebreak\section*{Art}
 \artcredit{cleansing-temple}{Tissot}{Les vendeurs chassés du Temple}
 % https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_The_Merchants_Chased_from_the_Temple_(Les_vendeurs_chass%C3%A9s_du_Temple)_-_James_Tissot.jpg
 
@@ -1753,9 +1816,7 @@ during a gap in Roman oversight between two procurators. (Other accounts have hi
 \artcredit{doubting-thomas}{Caravaggio}{The Incredulity of Saint Thomas}
 % https://commons.wikimedia.org/wiki/File:Caravaggio_-_The_Incredulity_of_Saint_Thomas.jpg
 
-\end{section}
-
-\begin{section}{List of works consulted}
+\hfill\pagebreak\section*{List of works consulted}
 
 \newcommand{\refbook}[4]{#1. \emph{#2}. #3, #4.\\} % name, title, publisher, year
 
@@ -1774,6 +1835,9 @@ during a gap in Roman oversight between two procurators. (Other accounts have hi
 
 \refbook{Josephus}{Antiquities of the jews}{Translated by William Whiston}{1737}
 
-\end{section}
+\hfill\pagebreak\printindex
+
+\hfill\pagebreak\printindex[texts]
+
 
 \end{document}
