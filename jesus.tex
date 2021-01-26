@@ -50,7 +50,9 @@
 \newcommand{\notequotesize}{\renewcommand{\quotesize}{\normalsize{}}}
 \newcommand{\comm}[1]{\begingroup \color{black!50} #1\endgroup}
 \newenvironment{quotetext}{\begingroup\quotesize}{\endgroup}
-\newcommand{\bible}[2]{\begin{quotetext}\textbf{#1}\index[texts]{#1} #2\end{quotetext}}
+\newcommand{\intex}[1]{\index[texts]{#1}}
+\newcommand{\reftex}[1]{#1\intex{#1}}
+\newcommand{\bible}[2]{\begin{quotetext}\textbf{#1}\intex{#1} #2\end{quotetext}}
 \newcommand{\matthew}[2]{\bible{Matthew #1}{#2}}
 \newcommand{\gospelmark}[2]{\bible{Mark #1}{#2}}
 \newcommand{\luke}[2]{\bible{Luke #1}{#2}}
@@ -392,14 +394,20 @@ is absent from Mark.}}}
   astonished at his teaching, for he taught them as having authority,
   and not as the scribes \note{jesus-writing}.}
 
+\luke{8:1}{
+[He] went about through cities and villages, preaching and bringing the good news of God's Kingdom. With him were the twelve,   and certain women who had been healed of evil spirits and infirmities: Mary who was called Magdalene, from whom seven demons had gone out;   and Joanna, the wife of Chuzas, Herod's steward; Susanna; and many others who served them from their possessions.  
+}
+
+\fig{mary-magdalene-at-the-feet-of-jesus}
+
 \comm{
-Jesus gathers followers and creates his
+Jesus gathers male and female followers and creates his
 own knock-off of John's illicit knock-off of the Temple's rites.
-Where John baptized people and then sent them home, Jesus gathers followers and 
+Where John baptized people and then sent them home, Jesus 
 carries out an itinerant lifestyle ministry. 
 
 The first four apostles are Simon Peter (\note{peter}), Andrew, John, and James the Greater. Simon Peter and Andrew
-are described in John 1:40 as having been followers of John the Baptist.\label{peter-called}
+are described in \reftex{John 1:40} as having been followers of John the Baptist.\label{peter-called}
 }
 
 \gospelmark{1:23}{Immediately there was in their synagogue [in Capernaum] a man with an unclean spirit, and he cried out,   saying, ``Ha! What do we have to do with you, Jesus, you Nazarene? Have you come to destroy us? I know you who you are: the Holy One of God!''
@@ -410,6 +418,8 @@ are described in John 1:40 as having been followers of John the Baptist.\label{p
    Now Simon's wife's mother\footnote{So Simon Peter is married.} lay sick with a fever, and immediately they told him about her.   He came and took her by the hand and raised her up. The fever left her immediately, and she served them.
 
   At evening, when the sun had set, they brought to him all who were sick and those who were possessed by demons.   All the city was gathered together at the door.   He healed many who were sick with various diseases and cast out many demons. He didn't allow the demons to speak, because they knew him.}
+
+\fig[0.6]{driving-out-demons}
 
 \gospelmark{1:35}{Early in the morning, while it was still dark, he rose up and went out, and departed into a deserted place, and prayed there.   Simon and those who were with him searched for him.   They found him and told him, ``Everyone is looking for you.''
   He said to them, ``Let's go elsewhere into the next towns, that I may preach there also, because I came out for this reason.''   He went into their synagogues throughout all Galilee, preaching and casting out demons.}
@@ -444,7 +454,7 @@ on earth to forgive sins''--he said to the paralytic--    ``I tell you, arise, t
 
 He arose, and immediately took up the mat and went out in front of them all, so that they were all amazed and glorified God, saying, ``We never saw anything like this!''}
 
-\comm{In John 2:1-11, Jesus turns water in to wine at the wedding at Cana.}
+\comm{In \reftex{John 2:1-11}, Jesus turns water in to wine at the wedding at Cana.}\index{Cana!wedding at}
 
 \subhead{Calling Matthew}
 
@@ -856,7 +866,7 @@ He said to them, ``Wherever you enter into a house, stay there until you depart 
 They went out and preached that people should repent.   They cast out many demons, and anointed many with oil who were sick and healed them.
 }
 
-\comm{Mark 6:14-29 inserts a mythologized account of the killing of John the Baptist.}
+\comm{\reftex{Mark 6:14-29} inserts a mythologized account of the killing of John the Baptist.\index{John the Baptist!mythologized death}}
 
 \subhead{The loaves and the fishes}
 
@@ -874,15 +884,13 @@ When they knew, they said, ``Five, and two fish.''
   Immediately he made his disciples get into the boat and go ahead to the other side, to Bethsaida,\notewithoutbackref{bethsaida} while he himself sent the multitude away.   After he had taken leave of them, he went up the mountain to pray.
 }
 
-\subhead{Walking on water}
+\comm{\reftex{Mark 6:47} describes Jesus walking on water. Then:}
 
-\gospelmark{6:47}{
-  When evening had come, the boat was in the middle of the sea, and he was alone on the land.   Seeing them distressed in rowing, for the wind was contrary to them, about the fourth watch of the night he came to them, walking on the sea;  and he would have passed by them,   but they, when they saw him walking on the sea, supposed that it was a ghost, and cried out;   for they all saw him and were troubled. But he immediately spoke with them and said to them, ``Cheer up! It is I! Don't be afraid.''   He got into the boat with them; and the wind ceased, and they were very amazed among themselves, and marveled;   for they hadn't understood about the loaves, but their hearts were hardened.
-
+\gospelmark{6:53}{
   When they had crossed over, they came to land at Gennesaret and moored to the shore.   When they had come out of the boat, immediately the people recognized him,   and ran around that whole region, and began to bring those who were sick on their mats to where they heard he was.   Wherever he entered--into villages, or into cities, or into the country--they laid the sick in the marketplaces and begged him that they might just touch the fringe of his garment; and as many as touched him were made well.
 }
 
-\comm{Later, in Mark 8:1-38, the miracle is recapitulated. Afterward,}
+\comm{Later, in \reftex{Mark 8:1-38}, the miracle of walking on water is recapitulated. Afterward,}
 
 \gospelmark{8:10}{
 Immediately he entered into the boat with his disciples and came into the region of Dalmanutha.   The Pharisees came out and began to question him, seeking from him a sign from heaven and testing him.   He sighed deeply in his spirit and said, ``Why does this generation seek a sign? Most certainly I tell you, no sign will be given to this generation.''
@@ -969,7 +977,7 @@ Jesus radically attacks the traditional structure of the family. Compare with ``
 }
 
 \comm{
-Mark 8:27 through the end of Mark 10 intersperses several kinds of material: a revelation that Jesus is the messiah,
+\reftex{Mark 8:27} through the end of Mark 10 intersperses several kinds of material: a revelation that Jesus is the messiah,
 miraculous healings, and social teachings. I omit the messianic material because much of it is clearly a later overlay
 (``take up his cross, and follow me''),
 and all of it seems doubtful. If the historical Jesus did believe himself to be the messiah, it's unclear
@@ -1023,18 +1031,18 @@ As he was going out into the way, one ran to him, knelt before him, and asked hi
 The Passover of the Jews was at hand, and Jesus went up to Jerusalem.
 }
 
-\comm{Mark 11:1-11 has Jesus entering Jerusalem triumphantly. The assault on the temple is framed by
+\comm{\reftex{Mark 11:1-11} has Jesus entering Jerusalem triumphantly.\index{Jerusalem!entrance into} The assault on the temple is framed by
 a metaphorical story about a fig tree, which represents the temple.}
 
 % Fig trees, figs, and fig leaves occur in many places in the bible, so, WP's assertion that the tree represents "Israel"
 % or the Jewish people can also work, but it's ambiguous an not necessarily an important difference, by metonymy.
 % https://en.wikipedia.org/wiki/Cursing_the_fig_tree
 
-\gospelmark{11:12}{The next day, when they had come out from Bethany, he was hungry.   Seeing a fig tree afar off having leaves, he came to see if perhaps he might find anything on it. When he came to it, he found nothing but leaves, for it was not the season for figs.   Jesus told it, ``May no one ever eat fruit from you again!'' and his disciples heard it. }
+\gospelmark{11:12}{The next day, when they had come out from Bethany, he was hungry.   Seeing a fig tree afar off having leaves, he came to see if perhaps he might find anything on it. When he came to it, he found nothing but leaves, for it was not the season for figs.   Jesus told it, ``May no one ever eat fruit from you again!'' and his disciples heard it. }\index{fig tree}
 
 \fig{cursing-fig-tree}
 
-\subhead{Attacking the temple}
+\subhead{Attacking the temple}\index{temple!assault on}
 
 \john{2:14}{
 He found in the temple those who sold oxen, sheep, and doves, and the changers of money sitting.   He made a whip of cords and drove all out of the temple, both the sheep and the oxen; and he poured out the changers' money and overthrew their tables.   To those who sold the doves, he said, ``Take these things out of here! Don't make my Father's house a marketplace!''\footnote{Mark 11:17 has ``den of robbers,'' which is meant to parallel
@@ -1050,7 +1058,7 @@ Jeremiah 7:11, not to suggest that Jesus was upset primarily because of economic
 
 \gospelmark{11:19}{
 When evening came, he went out of the city.   As they passed by in the morning, they saw the fig tree withered away from the roots.   Peter, remembering, said to him, ``Rabbi, look! The fig tree which you cursed has withered away.''
-}
+}\index{fig tree}
 
 \subhead{Debating the pharisees}
 
@@ -1080,7 +1088,7 @@ The following fragment helps to explain Jesus's motivation for his earlier physi
 \gospelmark{12:1}{
    He began to speak to [the priests] in parables.}
 
-\subhead{Parable of the banquet}
+\subhead{Parable of the banquet}\index{banquet (parable)}
 
 \thomas{64}{\footnote{Matthew 22:1, Luke 14:15. Matthew makes the comparison with the kingdom of heaven explicit.}
 Jesus said, ``A person had guests. And when he had prepared the banquet, he sent his
@@ -1111,7 +1119,7 @@ to the feast.' ''
 
 % ...I edited heavily for style to reconcile with WEB's style.
 
-\subhead{Parable of the shrewd manager}
+\subhead{Parable of the shrewd manager}\index{manager (parable of the shrewd manager)}
 
 \luke{16:1}{
 He also said to his disciples, ``There was a certain rich man who had a manager. An accusation was made to him that this man was wasting his possessions.  
@@ -1122,7 +1130,7 @@ He also said to his disciples, ``There was a certain rich man who had a manager.
    ``His lord commended the dishonest manager because he had done wisely[...]''
 }
 
-\subhead{Parable of the vineyard}
+\subhead{Parable of the vineyard}\index{vineyard (parable)}
 
 \thomas{65}{\footnote{Matthew 20 makes the allegory to the kingsom of heaven explicit, and has Jesus telling the story on the way to Jerusalem.
 Mark 12:1 has it being told to the pharisees inside the temple, 
@@ -1145,7 +1153,7 @@ him.''
 They left him and went away.
 }
 
-\subhead{Render unto Caesar}
+\subhead{Render unto Caesar}\index{render unto Caesar}
 
 \gospelmark{12:13}{
 They sent some of the Pharisees and the Herodians to him, that they might trap him with words.   When they had come, they asked him, ``Teacher, we know that you are honest, and don't defer to anyone; for you aren't partial to anyone, but truly teach the way of God. Is it lawful to pay taxes to Caesar, or not?   Shall we give, or shall we not give?''
@@ -1157,7 +1165,7 @@ They said to him, ``Caesar's.''
 They marveled greatly at him. 
 }
 
-\subhead{Debating Sadducees on the resurrection}
+\subhead{Debating Sadducees on the resurrection}\index{resurrection!debate with Sadducees}
 
 \gospelmark{12:18}{
 Some Sadducees, who say that there is no resurrection, came to him. They asked him, saying,   ``Teacher, Moses wrote to us, `If a man's brother dies and leaves a wife behind him, and leaves no children, that his brother should take his wife and raise up offspring for his brother.'   There were seven brothers. The first took a wife, and dying left no offspring.   The second took her, and died, leaving no children behind him. The third likewise;   and the seven took her and left no children. Last of all the woman also died.   In the resurrection, when they rise, whose wife will she be of them? For the seven had her as a wife.''
@@ -1165,7 +1173,7 @@ Some Sadducees, who say that there is no resurrection, came to him. They asked h
   Jesus answered them, ``Isn't this because you are mistaken, not knowing the Scriptures nor the power of God?    For when they will rise from the dead, they neither marry nor are given in marriage, but are like angels in heaven.    But about the dead, that they are raised, haven't you read in the book of Moses about the Bush, how God spoke to him, saying, `I am the God of Abraham, the God of Isaac, and the God of Jacob'?    He is not the God of the dead, but of the living. You are therefore badly mistaken.'' 
 }
 
-\subhead{The greatest commandments}\label{greatest-commandments}
+\subhead{The greatest commandments}\label{greatest-commandments}\index{commandments, greatest}
 
 \gospelmark{12:28}{
 One of the scribes came and heard them questioning together, and knowing that he had answered them well, asked him, ``Which commandment is the greatest of all?''
@@ -1178,7 +1186,8 @@ One of the scribes came and heard them questioning together, and knowing that he
 }
 
 \comm{Mark 12:34-13:2 are obvious later interpolations, with references to Christ and a prefiguring of the destruction of the
-Temple in the First Jewish–Roman War, which is retrodicted to be a prophecy of Daniel (the ``abomination of desolation'').}
+Temple in the First Jewish–Roman War, which is retrodicted to be a prophecy of 
+Daniel (the ``abomination of desolation'').}\index{abomination of desolation}
 
 \end{section}
 
@@ -1189,7 +1198,7 @@ Temple in the First Jewish–Roman War, which is retrodicted to be a prophecy of
 \gospelmark{14:1}{
 It was now two days before the Passover and the feast of unleavened bread, and the chief priests and the scribes sought how they might seize him by deception and kill him.   For they said, ``Not during the feast, because there might be a riot among the people.''}
 
-\comm{Mark 14:3-9 prefigures the crucifixion and announces Jesus as the messiah with an incident in which a woman pours a large jar of
+\comm{\reftex{Mark 14:3-9} prefigures the crucifixion and announces Jesus as the messiah with an incident in which a woman pours a large jar of
 expensive ointment over his head. (``Messiah'' and ``Christ'' mean ``anointed one.'')}
 
 \matthew{26:14}{
@@ -1199,7 +1208,7 @@ Then one of the twelve, who was called Judas Iscariot, went to the chief priests
 \subhead{Preparations for the Passover}
 
 \comm{Passover celebrates the Jews' escape from Egypt, after which they return to reconquer the Promised Land. This makes it
-inherently political and symbolic for Jews living under Roman imperial rule. Josephus records civil disturbances during Passover.}
+inherently political and symbolic for Jews living under Roman imperial rule. Josephus records civil disturbances during Passover.}\index{Passover}
 
 \gospelmark{14:12}{
   On the first day of unleavened bread, when they sacrificed the Passover,\footnote{John contradicts Mark by putting the crucifixion the day before
@@ -1213,12 +1222,12 @@ his disciples asked him, ``Where do you want us to go and prepare that you may e
 
 \fig[1]{last-supper}
 
-\subhead{The last supper}
+\subhead{The last supper}\index{last supper}
 
 \gospelmark{14:17}{
 When it was evening he came with the twelve.}
 
-\comm{John 13:1-20 now has Jesus wash his disciples' feet. Peter is initially hesitant, then enthusiastic.}
+\comm{John 13:1-20 now has Jesus wash his disciples' feet. Peter is initially hesitant, then enthusiastic.}\index{washing feet}
 
 \gospelmark{14:18}{
      As they sat and were eating, Jesus said, ``Most certainly I tell you, one of you will betray me--he who eats with me.''
@@ -1240,7 +1249,7 @@ When it was evening he came with the twelve.}
   But Peter spoke all the more, ``If I must die with you, I will not deny you.'' They all said the same thing.
 }
 
-\subhead{Gethsemane}
+\subhead{Gethsemane}\index{Gethsemane}
 
 \gospelmark{14:32}{
   They came to a place which was named Gethsemane.\footnote{Literally ``oil press,'' an olive grove.}
@@ -1255,7 +1264,7 @@ He said to his disciples, ``Sit here while I pray.''   He took with him Peter, J
 
 \fig{judas-kiss}
 
-\subhead{Jesus's arrest}
+\subhead{Jesus's arrest}\index{arrest}\index{Judas}\index{kiss, Judas}
 
 \gospelmark{14:43}{
   Immediately, while he was still speaking, Judas, one of the twelve, came--and with him a multitude with swords and clubs, from the chief priests, the scribes, and the elders.   Now he who betrayed him had given them a sign, saying, ``Whomever I will kiss, that is he. Seize him, and lead him away safely.''   When he had come, immediately he went to him and said, ``Rabbi! Rabbi!'' and kissed him.   They laid their hands on him and seized him.}
@@ -1278,7 +1287,7 @@ Funk, pp.~121-122.}}
 
 \fig{denial-of-saint-peter}
 
-\subhead{Peter's denial}
+\subhead{Peter's denial}\index{Peter!denial}
 
 \gospelmark{14:66}{
   As Peter was in the courtyard below, one of the maids of the high priest came,   and seeing Peter warming himself, she looked at him and said, ``You were also with the Nazarene, Jesus!''
@@ -1291,10 +1300,11 @@ Funk, pp.~121-122.}}
   The rooster crowed the second time. Peter remembered the words that Jesus said to him, ``Before the rooster crows twice, you will deny me three times.'' When he thought about that, he wept. 
 }
 
-\subhead{Trial}
+\subhead{Trial}\index{trial}
 
 \gospelmark{15:1}{
-Immediately in the morning the chief priests, with the elders, scribes, and the whole council, held a consultation, bound Jesus, carried him away, and delivered him up to Pilate.   Pilate asked him, ``Are you the King of the Jews?''
+Immediately in the morning the chief priests, with the elders, scribes, and the whole council, held a consultation, bound Jesus, carried him away, and delivered him up to Pilate.\index{Pilate}\footnote{Pontius Pilate, Roman governor of Judea}
+Pilate asked him, ``Are you the King of the Jews?''
 
 He answered, ``So you say.''
 
@@ -1303,7 +1313,8 @@ He answered, ``So you say.''
   But Jesus made no further answer, so that Pilate marveled. 
 }
 
-\comm{Tacitus (quoted at greater length on p.~\pageref{tacitus}) confirms Jesus's execution at the hands of Pontius Pilate:}\index[texts]{Tacitus}
+\comm{Tacitus (quoted at greater length on p.~\pageref{tacitus}) confirms
+Jesus's execution at the hands of Pontius Pilate:}\index[texts]{Tacitus}\index{Tacitus}
 
 \begin{quotetext}
 Christus, from whom the name had its origin, suffered
@@ -1316,9 +1327,9 @@ of our [prefects\footnote{Tacitus actually refers to Pilate as a procurator, whi
 The depiction of Pilate as wavering and lacking ill will is designed to make Christianity palatable to Romans.\footnote{Aslan, p.~148; Crossan,
 p.~141} The historical Pilate, as recorded by Josephus, is scornful of the Jews in general, and oversees large numbers
 of routine crucifixions.
-}
+}\index{Barabbas}
 
-\gospelmark{15:15}{
+\gospelmark{15:15}{\index{crucifixion}
 [Pilate] handed over Jesus, when he had flogged him, to be crucified.
 
   The soldiers led him away within the court, which is the Praetorium; and they called together the whole cohort.   They clothed him with purple; and weaving a crown of thorns, they put it on him.   They began to salute him, ``Hail, King of the Jews!''   They struck his head with a reed and spat on him, and bowing their knees, did homage to him.   When they had mocked him, they took the purple cloak off him, and put his own garments on him. They led him out to crucify him.
@@ -1361,7 +1372,7 @@ In Mark 16:1-8, three women find the tomb empty.
 
 \fig{resurrection-mary-magdalene}
 
-\begin{section}{After the crucifixion}
+\begin{section}{After the crucifixion}\index{resurrection}
 
 \comm{\personal{The NT records that Jesus appeared, resurrected in the flesh, to a number of his followers.
 Despite the inconsistencies and historical impossibilities in these accounts, it seems clear that they
@@ -1408,7 +1419,7 @@ Mary Magdalene came and told the disciples that she had seen the Lord, and that 
 
 \fig[0.6]{doubting-thomas}
 
-\john{20:24}{
+\john{20:24}{\index{Thomas (apostle)!``doubting''}
   But Thomas, one of the twelve, called Didymus, wasn't with them when Jesus came.   The other disciples therefore said to him, ``We have seen the Lord!''
 But he said to them, ``Unless I see in his hands the print of the nails, put my finger into the print of the nails, and put my hand into his side, I will not believe.''
 
@@ -1425,7 +1436,7 @@ But he said to them, ``Unless I see in his hands the print of the nails, put my 
 
 \subhead{Tacitus}\label{tacitus}\index[texts]{Tacitus}% also quoted briefly earlier
 
-\comm{There was a great fire in 64 CE during the reign of Nero. The Roman historian wrote the following around 116 CE:}
+\comm{There was a great fire in 64 CE during the reign of Nero. The Roman historian wrote the following around 116 CE:}\index{Nero}
 
 \begin{quotetext}
 But all human efforts, all the lavish gifts of the emperor, and the
@@ -1484,7 +1495,7 @@ Unlike Jefferson, I include non-Christian sources and have
 access to the Gospel of Thomas, and
 I don't use scientific plausibility
 as a criterion to exclude what otherwise may have been real, contemporary psychological experiences.
-The miracles are there, as are the appearances of the resurrected Jesus.
+The healing miracles are there, as are the appearances of the resurrected Jesus.
 I don't believe that Jesus had a time machine, however, so I generally omit material such as his command to
 ``take up your cross and follow me,'' which he couldn't possibly have said (and which wouldn't have been
 intelligible to his followers at the time). But I leave in
@@ -1795,6 +1806,12 @@ The translation of Tacitus is by Church and Brodribb.
 
 \artcredit{fishers-of-men}{Veneziano}{Calling of the apostles Peter and Andrew}
 % https://commons.wikimedia.org/wiki/File:15_Lorenzo_Veneziano,_Calling_of_the_Apostles_Peter_and_Andrew._1370_Staatliche_Museen,_Berlin..jpg
+
+\artcredit{mary-magdalene-at-the-feet-of-jesus}{Tissot}{Mary Magdalene at the Feet of Jesus}
+% https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_Mary_Magdalene_at_the_Feet_of_Jesus_-_James_Tissot.jpg
+
+\artcredit{driving-out-demons}{Tissot}{The Blind and Mute Man Possessed by Devils}
+% https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_The_Blind_and_Mute_Man_Possessed_by_Devils_(Le_d%C3%A9moniaque_aveugle_et_muet)_-_James_Tissot.jpg
 
 \artcredit{healing-the-paralytic}{Rode}{The paralytic lowered through the roof}
 % https://commons.wikimedia.org/wiki/File:Christus_heilet_einen_Gichtbr%C3%BCchigen.jpg
