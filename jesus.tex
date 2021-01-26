@@ -78,7 +78,7 @@
 \newcommand{\dangerousbend}{\rotatebox[origin=c]{-10}{\stixdangerousbend}}
 \newcommand{\link}[2]{\protect\jumplink{anchor-#1}{\textcolor{blue}{#2}}} % navigator package
 \newcommand{\note}[1]{\link{note-#1}{\dangerousbend\pageref{note:#1}}\label{notebackref:#1}\anchor{anchor-noteback-#1}}
-\newcommand{\notetext}[2]{\textbf{\link{noteback-#1}{\dangerousbend\pageref{notebackref:#1}}\label{note:#1}\anchor{anchor-note-#1}\quad{}#2}\par}
+\newcommand{\notetext}[2]{\textbf{\link{noteback-#1}{\dangerousbend\pageref{notebackref:#1}}\label{note:#1}\anchor{anchor-note-#1}\quad{}#2}\\*}
 % ... first arg is label, second is title
 \newcommand{\notewithoutbackref}[1]{\link{note-#1}{\dangerousbend\pageref{note:#1}}}
 % ... use this to refer to a note elsewhere than in the spot where the note's main reference is
@@ -188,7 +188,7 @@ excluding the likely forgery in 18-3}).
 Josephus says:\footnote{Antiquities 18-5-2} % https://www.gutenberg.org/files/2848/2848-h/2848-h.htm#link182HCH0005
 }\index{Josephus}
 
-\begin{quotetext}\index[texts]{Josephus}
+\begin{quotetext}\index[texts]{Josephus}\label{josephus-baptism}
 Now some of the Jews thought that the destruction of Herod [Antipater]'s army [ca.~36 CE, by the Nabateans] came
 from God, and that very justly, as a punishment of what he did against
 John, that was called the Baptist: for Herod slew him, who was a good
@@ -248,7 +248,7 @@ He said to them, ``Extort from no one by violence, neither accuse anyone wrongfu
 
 \comm{
 Josephus continues with the story of John's doom:
-}\index{John the Baptist!death}
+}\index{John the Baptist!death}\label{john-the-baptist-death}
 
 \begin{quotetext}\index[texts]{Josephus}
 Now when [many] others came in crowds about him, for
@@ -426,7 +426,7 @@ are described in \reftex{John 1:40} as having been followers of John the Baptist
 
 \comm{
 It would have been more culturally expected for a healer to set up shop in one place. Jesus doesn't do so, nor does
-he accept money. The reason for the secrecy and hiding is clarified in the following incident.
+he accept money or pray when he heals. The reason for the secrecy and hiding is clarified in the following incident.
 }
 
 \subhead{The leper}\index{leper}\index{healing!leper}
@@ -565,7 +565,7 @@ He entered again into the synagogue, and there was a man there whose hand was wi
 
 \subhead{Who is my neighbor?; the good Samaritan}\label{good-samaritan}
 
-\luke{10:25}{
+\luke{10:25}{\footnote{The theme is reiterated with another Samaritan in \reftex{Luke 17:14}.}
 Behold, a certain lawyer stood up and tested him, saying, ``Teacher, what shall I do to inherit eternal life?''
 
   He said to him, ``What is written in the law? How do you read it?''
@@ -789,7 +789,7 @@ A vine has been planted without the Father -- and (as) it is not vigorous, it sh
 }\index{vine (parable)}
 
 \thomas{97}{
-The Sovereignty of the [Father] is like a woman who is carrying a jar full of grain. (While) she was walking [on a] distant road, the handle of the jar broke, the grain streamed out behind her onto the road. She did not observe (it), she had noticed no accident. (When) she arrived in her house, she set the jar down—she found it empty.
+The Sovereignty of the [Father] is like a woman who is carrying a jar full of grain. (While) she was walking [on a] distant road, the handle of the jar broke, the grain streamed out behind her onto the road. She did not observe (it), she had noticed no accident. (When) she arrived in her house, she set the jar down -- she found it empty.
 }\index{jar of grain (parable)}
 
 \thomas{98}{
@@ -802,6 +802,8 @@ The Sovereignty of the Father is like someone who wishes to slay an eminent pers
 conceptualized by Jesus and his followers as a purely political revolution.}
 It shall not come by watching (for it). They will not say `Behold here!' or `Behold there!' But rather the Sovereignty of the Father is spread upon the earth, and humans do not see it.\index{kingdom of God!is spread upon the earth}
 }
+
+Summary of material about the kingdom of God: \note{kingdom-summary}.
 
 \end{section}
 
@@ -1747,6 +1749,54 @@ the wisdom sayings presented in this sermon.}
 Jesus is sometimes violent (Mark 11:15, the assault on the moneychangers in the temple),
 angry (Mark 1:41, anger with the leper), and in his religious displays sometimes ostentatious (Mark 11:9, the entrance
 into Jerusalem).
+
+\notetext{kingdom-summary}{Summary of material about the kingdom of God}
+The following is my own amateur analysis, from an atheist and naturalistic perspective.
+See ch.~2 of Beilby for a debate by experts that covers similar ground and expresses
+many possible permutations of contradictory opinions.
+
+Jesus and his followers live in a theocracy, not a liberal democracy with separation of church and state.
+They have no way even to conceptualize a political revolution without a religious one, or
+a religious one with no political side. It must be either both of these things or neither.
+The ``neither'' possibility won't wash, especially after Jesus's violent physical assault on
+the temple in Jerusalem.
+Revolution is in the air, and will in fact happen in 66 CE with the First Jewish-Roman War.
+
+They anticipate some great change in the institutions of power, but they don't believe
+that the coming of the kingdom of God is only this. John the Baptist's ministry was both
+a symbolic military reconquest of the promised land (crossing the Jordan) \emph{and}
+a ritual to symbolize repentance and the cleansing of people's hearts (Josephus, p.~\pageref{josephus-baptism}).
+Jesus's ministry has the same dual purpose.
+He wants his followers to repent and purify themselves (as he himself did with John),
+start building their utopia from the ground up (Thomas 113/Luke 17:20), and
+by doing so strengthen themselves and practice how to complete the transformation (Thomas 98).
+This connection between spiritual worthiness and worldly dominion is inevitable given the
+familiar cyclical logic of the Hebrew bible, with the human race repeatedly losing and
+regaining God's favor.
+
+How fast is all this going to happen? If Jesus wants to build a movement, he can't say that
+it will come to its final fruition next week, nor can he excite his followers by saying that
+it might take thousands of years. He tells them that it is already underway in the changes
+they are making at the personal and social levels (Thomas 113/Luke 17:20).
+
+He does give a more specific timeline -- one generation -- in the synoptic gospels, but the context makes it
+questionable whether this is the evangelists putting words in his mouth.
+\reftex{Mark 8:27-38} is a Christian fabrication (with the telltale ``take up his cross''), at the end of which,
+\reftex{Mark 9:1}, Jesus tells the apostles,
+``\ldots there are some standing here who will in no way taste death until they see God's Kingdom come with 
+power.''\footnote{The same passage is given almost verbatim in \reftex{Matthew 16:27-28}.
+Compare \reftex{Luke 9:26-27}.}
+
+Meanwhile, Jesus will at some point start to have his own timeline in mind.
+By the time of Mark 9:1, the assault on the temple is perhaps six months in the 
+future.\footnote{taking at face value Robertson, A harmony of the gospels,
+pp. 85 and 152}
+Jesus has already seen his mentor John the Baptist destroyed by the regime, simply
+for being a dangerous rabble-rouser (p.~\pageref{john-the-baptist-death}).
+He has no wish to get his own followers massacred by the Romans, but at whatever point
+in time he forms his plan of action at the temple, he knows that it will almost certainly
+result in his own death. He doesn't need to be a prophet or have a time machine in order
+to predict when this will happen.
 
 \notetext{resurrected-appearances-reality}{Reality of the resurrection experiences}
 \notesummary{It is a historical reality that Jesus's followers believed they had seen him resurrected; that these
