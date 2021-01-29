@@ -2,7 +2,11 @@ jesus.pdf: jesus.tex
 	xelatex jesus
 	xelatex jesus
 	makeindex jesus
+	#
+	perl -i -pe 's/(\d+)/$$1+1000/ge' jesus.adx
 	makeindex jesus.adx -o jesus.and
+	perl -i -pe 's/(\d\d\d\d)/$$1-1000/ge' jesus.and
+	#
 	xelatex jesus
 
 book: jesus.pdf
