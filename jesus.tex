@@ -16,6 +16,7 @@
 \usepackage{parskip} % https://tex.stackexchange.com/a/57/6853
 
 \usepackage{makeidx}
+\usepackage{enumitem} % for enumerate environments with letters
 \usepackage{etoolbox} % supplies \ifstrempty
 \usepackage{navigator}
 \usepackage{xcolor}
@@ -522,9 +523,9 @@ the secrecy and hiding, as well as Jesus's initial anger (\note{leper-seditious}
   But there were some of the scribes sitting there and reasoning in their hearts,   ``Why does this man speak blasphemies like that? Who can forgive sins but God alone?''
 
   Immediately Jesus, perceiving in his spirit that they so reasoned within themselves, said to them, ``Why do you reason these things in your hearts?    Which is easier, to tell the paralytic, `Your sins are forgiven;' or to say, `Arise, and take up your bed, and walk?'    
-But that you may know that the Son of Man\note{son-of-man} 
+But that you may know that any man\note{son-of-man} 
 has authority\footnote{The issue of authority, implicit in the story of the leper, is here made explicit.
-The scribes will hear Jesus's words in Aramaic simply as Jesus claiming that ``any human being has the authority'' --
+The scribes can hear Jesus's ``son of man'' in Aramaic in the generic sense as referring to any human --
 including a mamzer like Jesus.
 }
 on earth to forgive sins''--he said to the paralytic--    ``I tell you, arise, take up your mat, and go to your house.'' 
@@ -536,9 +537,17 @@ He arose, and immediately took up the mat and went out in front of them all, so 
 \subhead{Calling Matthew}\index{Matthew (apostle)}
 
 \gospelmark{2:13}{He went out again by the seaside. All the multitude came to him, and he taught them.   As he passed by, he saw 
-[Matthew\footnote{The apostle. Named in Mark as Levi the son of Alphaeus.}] sitting at the tax office.\footnote{Tax collectors were hated
-both because the taxes were exorbitant and because the taxes were being collected for the Romans.}
+[Matthew\footnote{The apostle. Named in Mark as Levi the son of Alphaeus.}] sitting at a 
+toll both.\footnote{The word τελώνιον can't be translated as an indoor tax office, since from context, Matthew was outside.
+Tax collectors were hated
+both because the taxes were exorbitant and because the taxes were being collected for the Romans. Taxes would flow from merchants
+to people like Matthew, then to a wealthy person who had bid to get the lucrative contract for a whole district, then through
+the Herodian client state, and finally to the Romans.
+Because Matthew was at the bottom of the food chain, we can't infer that he was wealthy or literate.}\index{tax collectors}
 He said to him, ``Follow me.'' And he arose and followed him.}
+
+% "There was a tax booth in Capernaum, which was on the trade route from Damascus to Galilee and the Mediterranean." -- source?
+% https://www.biblegateway.com/passage/?search=Matthew%209&version=NET#fen-NET-23389u
 
 \gospelmark{3:7}{
   Jesus withdrew to the sea with his disciples; and a great multitude followed him from Galilee, from Judea,   from Jerusalem, from Idumaea, beyond the Jordan, and those from around Tyre and Sidon. A great multitude, hearing what great things he did, came to him.   He said to his disciples that a little boat should stay near him because of the crowd, so that they wouldn't press on him.   For he had healed many, so that as many as had diseases pressed on him that they might touch him.   The unclean spirits, whenever they saw him, fell down before him and cried, ``You are the Son of God!''   He sternly warned them that they should not make him known.
@@ -1476,7 +1485,8 @@ of routine crucifixions.
 
   They compelled one passing by, coming from the country, Simon of Cyrene, the father of Alexander and Rufus, to go with them that he might bear his cross.   They brought him to the place called Golgotha, which is, being interpreted, ``The place of a skull.''   They offered him wine mixed with myrrh to drink, but he didn't take it.
 
-  Crucifying him, they divided his garments among them, casting lots to see what each should take.   
+  Crucifying him, they divided his garments among them, casting lots to see what each should take.\footnote{Probably a detail fabricated
+to echo \reftex{Psalms 22:18}. It doesn't actually make sense that the soldiers would covet the humble clothing of a working-class criminal so much.}
 It was morning when they crucified him.   The superscription of his accusation was written over him: ``THE KING OF THE JEWS.''   With him they crucified two robbers, one on his right hand, and one on his left.\footnote{Mark 28-30 then has: The Scripture was fulfilled which says, 
 ``He was counted with transgressors.'' Those who passed by blasphemed him, wagging their heads and saying, ``Ha! You who destroy the temple and build it in three days,   save yourself, and come down from the cross!''}
 }
@@ -1695,23 +1705,32 @@ I don't believe that Jesus had a time machine, but I leave in
 prophecies that are necessary in order to make sense of the story-line as told by Mark,
 e.g., ``before the rooster crows twice, you will deny me three times.''
 
-Red flags for the no-time-machine criterion are the following motifs:
-\begin{enumerate}
+1. Red flags for the no-time-machine criterion are the following motifs:
+\begin{enumerate}[label=\alph*] % enumitem package
 \item ``Take up your cross and follow me.''\footnote{\reftex{Matthew 16:24}, \reftex{Luke 9:23}} Jesus couldn't possibly have said this, and if he had, it
   wouldn't have been intelligible to his followers at the time.
 \item ``I will destroy this temple that is made with hands, and in three days I will build another made without 
-    hands.''\footnote{\reftex{Mark 14:58}, with similar examples in \reftex{Mark 13:2}, \reftex{Mark 15:29}, \reftex{Luke 19:43},
+    hands.''\footnote{\reftex{Mark 14:58}, with similar examples in \reftex{Mark 8:31}, \reftex{Mark 13:2}, \reftex{Mark 15:29}, \reftex{Luke 19:43},
     \reftex{John 2:19}, \reftex{Matthew 26:61},
     \reftex{Thomas 71}, and \reftex{Acts 6:14}}
     The fact that this is a later Christian overlay is made explicit in John, with the temple being Jesus's body
     and the three days referring to the time from the crucifixion to the resurrection.\footnote{Funk, p.~122}
     The gospels and Acts were written down after the destruction of the temple in 70 CE, so their authors are
     also providing a retrodictive explanation of the significance of this event.\footnote{Aslan, pp.~75-76}
+\item Prophecy of betrayal and derision:
+    ``How is it written about the Son of Man, that he should suffer many things and be despised?''\footnote{\reftex{Mark 9:12}}
+    It's possible that at some point Jesus realized he was embarking on a course of action that would result in his own destruction.
+    But the Hebrew bible does not predict that the messiah will be betrayed, scorned, or despised. It paints him as a glorious and successful
+    political, military, and religious leader. There was no time machine to allow the authors of the Hebrew bible to know that
+    Jesus would be crucified.\footnote{And the scriptural references don't even make much sense as prophecies. For example, \reftex{Psalms 22:1},
+    ``My God, my God, why have you forsaken me?,'' makes sense as something Jesus would repeat on the cross, but Psalm 22 doesn't
+    make sense as a prophecy about a messiah who will be scorned. It contains verses such as ``But I am a worm, and no man'' (\reftex{Psalms 22:6}),
+    which clearly aren't meant to be about a messiah.}
 \end{enumerate}
 
 Also excluded:
 \begin{enumerate}
-\setcounter{enumi}{2}
+\setcounter{enumi}{1}
 \item Novel statements and commands by the resurrected Jesus (e.g., \reftex{Matthew 28:19}).
     Although some of these resurrection accounts may be real records of
     psychologically real experiences, naturalism requires that anything novel that Jesus says in them can only be the product of
@@ -2008,37 +2027,34 @@ literary prefiguring of his motif of the messianic secret.
 the name Adam just means ``man.'' 
 Jesus sometimes uses it in this normal sense (\reftex{Mark 2:27-28}, p.~\pageref{foraging-on-sabbath}),
 but often also seems to use it as a title when referring to 
-himself.\footnote{The grammatical distinction is clear in Greek but not  in the Aramaic language that Jesus spoke.
+himself. The grammatical distinction is clear in Greek but not  in the Aramaic language that Jesus spoke.
 The Greek ``ο υιος του ανθρώπου'' in Mark 2:10 has the definite article ``ο.'' 
 Since the original versions were written in all capital letters, there was no possibility
-of using capitalization as in English to indicate a title.}
+of using capitalization as in English to indicate a title.
+
 It's a mysterious distinction without a difference,
 like ``the Man With Two Legs,'' but it grants ``authority on earth'' (Mark 2:10). The need for such authority
 is implicit in the immediately preceding story of the leper, and is now made explicit in the story of the paralytic.
 (John 5:1 also inserts a dispute in this miracle story, but with different legalistic details.)
-Some experts are skeptical about whether Jesus ever used ``son of man'' as a title to refer to himself (Funk, pp. 76-77, 
-but see Beilby, p.~221).
 
 % https://hermeneutics.stackexchange.com/questions/54828/is-aramaic-bar-enos-son-of-man-identifiable-as-a-definite-or-indefinite-fo
 
-If the phrase really was a self-title, then it has two possible layers of meaning.
+The phrase has two possible layers of meaning.
 Jesus was considered by his community to be a mamzer, a person born of forbidden sex.
 In a scene like \reftex{Mark 2:1}, p.~\pageref{paralytic}, Jesus is challenged by scribes in a rabbinic
 debate about his authority to forgive the sins of a paralytic after healing him.
-They would have been unfamiliar with any possible messianic implications.
 If Jesus actually spoke these words, it was in Aramaic, so the distinction between a generic ``a son of Adam'' and the
 evangelists' Greek self-title ``the Son of Man'' would not have been audible.
-The scribes will hear Jesus's words in Aramaic simply as Jesus claiming that ``anyone has the authority.''
+The scribes can, if they wish, hear Jesus's words in Aramaic simply as Jesus claiming that ``anyone has the authority.''
 Compare with Psalms 8:4: ``What is the son of man, that you care for him? 
 For you have made him a little lower than the angels,
 and crowned him with glory and honor.
   You make him ruler over the works of your hands.''
 But because the idiom for ``male human being'' is ``son of a man,'' there is an additional implied
-emphasis on throwing back his status in their faces.
+emphasis on throwing back his mamzer status in their faces.
 
-As a second possible layer of meaning, and still keeping in mind that we don't know whether it's actually
-true that Jesus used the words as a self-title,
-it may preserve a historical fact that Jesus secretly told his followers that he was the messiah, while using coded
+As a second layer of meaning, the idiosyncratic phrase seems to
+preserve a historical fact that Jesus secretly told his followers that he was the messiah, while using coded
 language to avoid getting in political trouble for it. It would have had plausible deniability, especially because
 ``son of man'' is used so many times in the Hebrew bible with so many differing shades of meaning. But in one place in the
 apocalyptic book of Daniel (7:13-14), which dates to a period of Seleucid persecution,
@@ -2046,13 +2062,30 @@ the phrase is used to discuss a prehistoric world-wide kingdom and
 subsequent ``everlasting dominion,'' ongoing and already established by ``one like a son of man'' who
 ``came with the clouds of the sky.''\footnote{This portion of Daniel was originally written in Hebrew.}
 
-On the other hand, it's possible, as suggested by the Jesus Seminar, that the messianic meaning was never
-understood, even as an implication for an in-group, during Jesus's lifetime. Perhaps
-the messianic interpretation was layered on only after the crucifixion. On this reading, either the discussion of authority
-in Mark 2:10 was added after this shift in meanings, or else it is authentic but the second layer of meaning was not
-originally intended.
+Mark has 13 occurrences of the phrase ``son of man,'' which I render below as ***.
 
+\begin{tabular}{lp{60mm}}
+ambiguous & 2:10, [To scribes:] ``But that you may know that *** has authority on earth to forgive sins''--he said to the paralytic-- '' \\
+          & 2:28, [To pharisees:] ``Therefore *** is lord even of the sabbath.'' \\
+fabricated & 8:31, 8:38, 9:9, 9:12, 9:31, 10:33, 10:45, 13:26, 14:21, 14:41 \\
+ahistorical & 14:62, [Asked by the high priest whether he is the messiah:]
+                 ``Jesus said, `I am. You will see *** sitting at the right hand of power, and coming with the clouds of the sky.' ''
+\end{tabular}
 
+It's striking how many of these are either fabrications\footnote{13:26 is more ambiguous than the others, but the scene is set
+``on the Mount of Olives opposite the temple,'' which Jesus prophecies will be destroyed. The long discourse reads as a Christian
+fabrication.} by my criteria \notewithoutbackref{about-this-doc}
+or ahistorical (the historically impossible trial before the sanhedrin, 14:62). The remaining two can both be read as
+generic usages of ``son of man.''
+
+Some experts are skeptical about whether Jesus ever used ``son of man'' as a title to refer to himself\footnote{Funk, pp. 76-77, 
+but see Beilby, p.~221} or suggest that the messianic meaning was never
+understood, even as an implication for an in-group, during Jesus's lifetime. This is impossible.
+Jesus's use of the phrase as a self-title is a verbal habit as characteristic as anything can be of the oral memory of Jesus's words.
+And when Jesus uses the phrase in 2:10 and 2:28, he's engaging in learned rabbinical debate, pitting his working man's
+total recall of the oral targum against his opponents' book learning. It's not possible that the scribes and pharisees are
+ignorant of the fact that the phrase has two different meanings. In both versus and with both interpretations, it wins the
+argument for Jesus. And in both cases, its ambiguity gives him plausible deniability.
 
 \notetext{matthew-second-discourse}{The second discourse of Matthew}
 The commissioning of the apostles in Mark 3 is very brief, but
@@ -2242,7 +2275,7 @@ But they, when they heard this, were cut to the heart, and were determined to ki
 certainly a fabrication.}
 
 Precisely because people in the ancient world considered a decent burial to be so important,
-part of the punishment of crucifixion was to be left out to be eaten by dogs and crows. See Crossan, p.~160.
+part of the punishment of crucifixion was to be left out to be eaten by dogs and crows.\footnote{Crossan, p.~160}
 
 There is historical and archaeological evidence for exceptions to this rule. Josephus says:\footnote{The Life of Flavius Josephus, 75}
 
@@ -2261,7 +2294,7 @@ Furthermore, an archaeological dig in 1968 uncovered an ossuary containing the r
 with an inscription reading Jehohanan.\footnote{\url{https://en.wikipedia.org/wiki/Jehohanan}}
  One of the heel bones has a nail through it. This verifies that
 it was possible for the remains of a crucified person to be interred. However, we have no idea of the
-circumstances of this person's interment. For example, it's possible that he was left to rot and then
+circumstances of this person's interment. For example, it's possible that he was left out as carrion and then
 thrown in a mass grave, with his family then extracting what was left. For opposing views on what this tells us about Jesus's possible tomb,
 see blog posts by Ehrman\footnote{\url{https://ehrmanblog.org/the-skeletal-remains-of-yehohanan-readers-mailbag-october-8-2017/}}
 and Evans.\footnote{apparently no longer online}
@@ -2270,7 +2303,14 @@ Since a lack of a decent burial was part of the punishment, and Jesus was crucif
 of the state, it would be extremely surprising for his remains to be released to one of his supporters as described in the gospels.
 Any of his supporters, even a rich one, would have been tainted by association with a political criminal,
 not treated with consideration as Titus did with Josephus, a Roman citizen and loyal comrade who had renamed
-himself Titus Flavius Josephus after his patron and his patron's dynasty.
+himself Titus Flavius Josephus after his patron and his patron's dynasty. Josephus's reasons for recording
+this incident would be that (1) it is so incredibly unusual as to be interesting to his readers;
+(2) it depicts his patron as just and merciful; and
+(3) it show that Josephus is the kind of important person who can call in this type of favor (which is also
+the message of the longer passage in which this incident occurs).
+None of these three factors are likely to be present in Jesus's case. His execution for sedition was
+routine. Pilate was remembered as brutal and efficient, not kind and merciful. And Jesus was exactly
+the opposite of the sort of politically connected person represented by Josepus.
 
 \notetext{resurrected-appearances-reality}{Reality or unreality of the resurrection experiences}
 The NT records that Jesus appeared, resurrected in the flesh, to a number of his followers, and that,
@@ -2410,8 +2450,13 @@ Paul was martyred by Nero around 64 CE.
 
 \section*{Translations}
 
-Unless otherwise noted, all English translations of the Gospels and Acts are from the public-domain World English Bible.
-I've freely made changes for reasons of style or clarity.
+In general, English translations of the bible are from the public-domain World English Bible (WEB).
+However, I've freely made changes for reasons of style or clarity; to provide more vivid or familiar language
+(e.g., ``brood of vipers''); to eliminate revertial capitals; to correct language that I think is historically
+inaccurate (e.g., for τελώνιον, ``toll booth'' rather than WEB's ``tax office''); to make the text more readable after my own elisions; and, in some
+cases, for substantive reasons, such as my own interpretations of what is meant by ``son of man'' in various contexts.
+The translators of the WEB ask that people not describe altered versions of the text as the WEB.
+
 Translations of Josephus are from Whiston, 1737.
 Translations of the Gospel of Thomas are  by Thomas Paterson Brown (1938-2012),
 a counterculture figure who uploaded his translations of the gnostic gospels onto a university web site

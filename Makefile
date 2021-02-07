@@ -3,6 +3,9 @@ jesus.pdf: jesus.tex
 	xelatex jesus
 	makeindex jesus
 	#
+	# Get Luke 10:25 to come after Luke 1:5.
+	# https://tex.stackexchange.com/questions/581025/indexing-in-partial-decimal-order-luke-1025-after-luke-15
+	# Bibleref package would probably have accomplished this more simply.
 	perl -i -pe 's/(\d+)/$$1+1000/ge' jesus.adx
 	makeindex jesus.adx -o jesus.and
 	perl -i -pe 's/(\d\d\d\d)/$$1-1000/ge' jesus.and
