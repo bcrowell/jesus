@@ -1,13 +1,13 @@
 % Format for booklet to be printed on letter paper.
 % See `book' target in Makefile.
 % Bindingoffset refers to the gutter.
-\documentclass[10pt,twoside]{article} % not book, because then sections get numbered 0.x
-\usepackage[paperheight=8.5in,paperwidth=5.5in,bindingoffset=0.3in, left=0.5in, right=0.5in]{geometry}
+%\documentclass[10pt,twoside]{article} % not book, because then sections get numbered 0.x
 
+% \usepackage[paperheight=8.5in,paperwidth=5.5in,bindingoffset=0.3in, left=0.5in, right=0.5in]{geometry}
 
 % a5 format with gutter, for lulu:
-% \documentclass[10pt,a5paper,twoside]{article}
-% \usepackage[bindingoffset=0.3in, left=0.5in, right=0.5in]{geometry} % https://tex.stackexchange.com/q/80520/6853
+ \documentclass[10pt,a5paper,twoside]{article}
+ \usepackage[bindingoffset=0.3in, left=0.5in, right=0.5in]{geometry} % https://tex.stackexchange.com/q/80520/6853
 
 \usepackage{fontspec}
 \setmainfont{DejaVu Serif} % This font looks like ass. But it makes greek work.

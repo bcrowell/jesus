@@ -1,3 +1,8 @@
+# To make a pdf for lulu:
+#   edit top of file for correct document setup, compile default target.
+# To make a pdf I can print on a home printer as a booklet:
+#   edit top of file for correct document setup, make booklet.
+
 jesus.pdf: jesus.tex
 	xelatex jesus
 	xelatex jesus
@@ -12,7 +17,7 @@ jesus.pdf: jesus.tex
 	#
 	xelatex jesus
 
-book: jesus.pdf
+booklet: jesus.pdf
 	pdfbook2 jesus.pdf
 	mv jesus-book.pdf booklet.pdf
 	# creates booklet.pdf
